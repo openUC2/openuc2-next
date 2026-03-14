@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High-Throughput Multiwell Screening — Applications | openUC2</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-page="applications">
+<div id="nav-root"></div>
+<div class="container"><div class="breadcrumbs"><a href="../index.html">Home</a> <span>/</span> Applications <span>/</span> Multiwell Screening</div></div>
+
+<section class="hero" style="padding:48px 0;">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <span class="tag tag-pro">Application</span>
+        <h1 style="font-size:32px; margin-bottom:12px;">High-Throughput Multiwell Screening</h1>
+        <p style="font-size:17px; line-height:1.7;">Fast, automated tile scans across 96- and 384-well plates with reliable autofocus, repeatable illumination, and multi-channel fluorescence. FRAME handles hands-off job execution, per-well QC, and error recovery — so your screening runs overnight without supervision.</p>
+      </div>
+      <div>
+        <div class="img-placeholder" style="min-height:280px; background:#1a1e3a; color:#8ab;">
+          [Composite image: 96-well plate with fluorescence channel overlays — DAPI/GFP/mCherry per well]<br>
+          FRAME | 10× | 4-color | 96-well plate
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Plate-to-data in one automated run</h2>
+    <div class="two-col mt-3">
+      <div>
+        <p style="margin-bottom:16px;">FRAME's 130×90 mm encoder-equipped XY stage covers an entire 96-well plate with absolute positional accuracy. Köhler/LED-array illumination ensures homogeneous illumination across the full field of view, eliminating per-well calibration overhead.</p>
+        <p style="margin-bottom:16px;">A hardware-triggered sCMOS camera, synchronized with the LED array and Z-focus lock, captures each well with consistent exposure across the plate. Four to five fluorescence colors can be acquired sequentially with a motorized filter-cube carousel, and a configurable overlap threshold rejects cross-talk between channels.</p>
+        <h3 style="font-size:16px; margin:20px 0 8px;">Typical configuration</h3>
+        <table class="specs-table">
+          <tr><th>Plate formats</th><td>6 / 24 / 96 / 384-well; standard SBS footprint</td></tr>
+          <tr><th>Objective</th><td>10× or 20× Plan Apochromat</td></tr>
+          <tr><th>Fluorescence</th><td>Up to 5 channels (405 / 488 / 532 / 561 / 638 nm)</td></tr>
+          <tr><th>Autofocus</th><td>Contrast-based + laser focus-lock per well</td></tr>
+          <tr><th>Stage</th><td>XY with encoders for absolute, repeatable positioning</td></tr>
+          <tr><th>Camera</th><td>sCMOS with hardware triggering; vibration-damped FRAME body</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="img-placeholder" style="min-height:320px; background:#e8eaf8;">
+          [Diagram: Plate scan path — snake-tile pattern over 96-well plate with per-well autofocus callouts]
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title text-center">Key capabilities</h2>
+    <div class="feature-grid mt-3">
+      <div class="feature-card">
+        <h4>🧪 96 / 384-well plate support</h4>
+        <p>Motorized plate holders with SBS-footprint registration. Load plate, press run, come back to finished data.</p>
+      </div>
+      <div class="feature-card">
+        <h4>💡 Homogeneous Köhler illumination</h4>
+        <p>LED array and Köhler condenser deliver flat illumination across the entire field of view. Flat-field correction built into the acquisition pipeline.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🎨 4–5 color fluorescence</h4>
+        <p>Motorized filter-cube carousel switches channels in <200 ms. Calibrated exposure per channel with hardware-triggered camera synchronization.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🔒 Reliable autofocus</h4>
+        <p>Contrast-based autofocus per tile, with laser focus-lock fallback. Handles uneven plates and meniscus effects across the plate surface.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🤖 Job scheduler</h4>
+        <p>Queue multiple plates, define acquisition recipes, and set error-recovery policies. Resume interrupted runs at the well that failed — no data loss.</p>
+      </div>
+      <div class="feature-card">
+        <h4>📦 OMERO / OME-Zarr output</h4>
+        <p>Data written directly to OMERO server or OME-Zarr archive. Per-well thumbnails and metadata for immediate QC in the browser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="img-placeholder" style="min-height:240px; background:#eaeef8;">
+          [Screenshot: ImSwitch plate-scan wizard — well selection grid, channel order, autofocus settings, estimated run time]
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:20px; margin-bottom:12px;">On the roadmap</h3>
+        <ul style="padding-left:20px; line-height:2;">
+          <li>Illumination homogeneity improvements (vignetting / hotspot correction)</li>
+          <li>Reduced fluorescence background in demanding samples</li>
+          <li>Autofocus robustness across the full plate (edge wells)</li>
+          <li>SILA2 instrument control interface for lab automation integration</li>
+          <li>Per-well QC images and real-time quality metrics dashboard</li>
+          <li>Timelapse reproducibility across multi-day screening runs</li>
+        </ul>
+        <a href="../contact.html?subject=Multiwell+screening" class="btn btn-primary mt-3" style="display:inline-block;">Discuss your assay →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="cta-banner">
+    <h2>Ready to automate your screening?</h2>
+    <p>Tell us your plate format, fluorophores, and throughput requirements. We'll configure FRAME for your assay.</p>
+    <a href="../contact.html?subject=Multiwell+screening+quote" class="btn" style="background:#fff; color:var(--uc2-blue);">Get a quote →</a>
+  </div>
+</div>
+
+<div id="footer-root"></div>
+<div id="cookie-root"></div>
+<script src="../shared.js"></script>
+</body>
+</html>

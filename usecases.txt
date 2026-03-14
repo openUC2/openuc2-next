@@ -1,0 +1,327 @@
+1) High-throughput multiwell screening (96/384-well plates, Jordi, Uppsala)
+Difficulty ◼◼◼◼◼
+Challenge / requirement
+Fast tile scans with reliable autofocus over uneven plates
+Repeatable illumination & exposure across wells for quantitation
+Hands-off job execution with queueing & error recovery
+Multiple Fluorescence Colours (4-5 colours with difficult wavelengths)
+Avoid crosstalk between different colors
+
+
+Necessary hardware configuration
+XY stage with encoders for absolute focussing
+Z with focus lock (contrast/laser)
+Homogeneous Köhler/LED array illumination
+multicolour filter/filter cube carousel for multi-channel
+sCMOS with hardware triggering; vibration-damped FRAME
+Software Integration, SILA2? 
+
+
+Not yet good enough in FRAME
+Illumination homogeneity (vignetting/hotspots) still visible at FoV edges
+Strong Background in Fluorescence 
+Autofocus robustness across plate
+Job scheduler & recovery (resume after stall, per-well QC) needs hardening
+Data Handling / Data Format 
+Timelapse/tile scan reproducibility
+2) Live-cell, long-term time-lapse (incubator or environmental hood, Georgeos, UAE)
+Difficulty ◼◼◼◼◻
+Challenge / requirement
+Drift-free focusing over hours/days with gentle illumination
+Environmental stability (T/CO₂/humidity), contamination-safe access
+Inside-incubator operation
+Low phototoxicity, reproducible intensity over time
+Easy access to the sample inside incubator
+
+
+Necessary hardware configuration
+Enclosure/hood with temp/CO₂/humidity control; anti-condensation window (incubator-contained)
+Focus lock (reflective IR) + Z fine stepper
+LED/laser with calibrated intensity & feedback photodiode
+Vibration isolation feet; cable strain relief for moving axes
+less cable coming out from the incubator
+wireless could not work inside incubator, maybe need LAN connection
+
+
+Not yet good enough in FRAME
+Focus-map (global Z-offset) + per-position drift compensation not fully integrated
+Environmental control loop + logging UI missing in ImSwitch
+Data handling 
+System test under incubator environment
+
+3) FLIM Integration (incl. FLIM-ready)
+Difficulty ◼◼◼◻◻
+Challenge / requirement
+Clean spectral separation, fast channel switching, stable excitation power
+Quantitative flat-field & shading correction; metadata-rich acquisition
+Option to extend to lifetime (phase-domain FLIM) later
+
+
+Necessary hardware configuration
+Galvo Scanner 
+Corrected objective set 
+xyz stage with motorization
+brightfield + fluo set 
+FLIM add-on path provisioned by FLIM Labs 
+Software Integration 
+
+
+Not yet good enough in FRAME
+Calibration of FLIM Profiles with calibration target 
+Software integration (e.g. docker for FLIM)
+faster scanning speed 
+Robust alignment and firmware settings 
+
+
+
+4) DNA-FISH (2-color, fixed samples) (Holger)
+Difficulty ◼◼◻◻◻
+Challenge / requirement
+Fixed samples; two-color fluorescence (e.g., 488/635 nm); 
+FISH protocol; barcode-along-DNA readout; 
+very sensitive dyes (low photon count, bleed-through); 
+scan large areas; offline analysis
+ Necessary hardware configuration
+Stable XY tiling with autofocus; 
+488 nm & 635 nm excitation with fast switching; 
+two matched emission channels; 
+high-NA objective set; 
+low-noise camera; 
+flat-field calibration; 
+one-button “scan & analyze” workflow
+ Not yet good enough
+Closed-loop autofocus feedback across tiles; 
+integrated storage pipeline (OMERO/OME-Zarr); 
+bundled analysis; 
+true one-button UX.
+nice GUI and easy interact
+
+
+5) Tele-histopathology (whole-slide) (Johannes, Muriel)
+Difficulty ◼◻◻◻◻
+Challenge / requirement
+Large-FoV, fast brightfield scanning; 
+always-in-focus; 
+multi-tile canvas; 
+compatible data format for downstream pipelines
+ Necessary hardware configuration
+
+
+Brightfield Köhler illumination with high uniformity; 
+fast XY stage; 
+robust autofocus; 
+export to pyramidal OME-TIFF/OME-Zarr.
+easy control of all steps of workflow, maybe direct on joystick
+
+ Not yet good enough
+Accurate camera triggering & timing; 
+illumination homogeneity; 
+software that computes exact tile transforms/positions; 
+verification of absolute position accuracy.
+perfect stitching
+Synchronization of whole microscope
+camera triggering
+
+
+
+
+6) Use Case: In-Incubator-Organoid-QC (36-Well, Durchlicht, autonom)
+Challenge / Requirement
+Bildgebung im Inkubator (Organoide dürfen Inkubator nicht verlassen)
+Autonomes Erfassen (Zeitreihe + periodischer Komplettscan, z. B. 36-Well)
+Fokusstabilität bei erhöhten Temperaturen / 100 % rF (Drift)
+Remote-Kontrolle (Start/Stop, Monitoring, Alarme)
+Langzeit-Robustheit in hoher Luftfeuchte; Schimmel-/Kondensations-Risiken adressieren
+Einfache GUI für Scan-Plan + Zeitraffer
+
+
+Necessary Hardware Configuration
+Kompakte FRAME-Einheit mit geschütztem Gehäuse für Inkubatorbetrieb (korrosionsarme Materialien, abgedichtete Leitungen)
+Durchlicht-Beleuchtung (diffus, homogen) - nicht zu heiß!
+IR-basierter Fokus-Lock (through-objective, nicht-TIR) oder reflektiver Sensor; feiner Z-Antrieb
+Anti-Kondensations-Fenster - wirklich ein Problem? 
+Kabel-/LAN-Durchführung (Inkubator-Port), LAN–USB-Anbindung; Kabel-/Fiber-Organisation
+Sicherheitsaspekte: Transport-/Handling-Sicherung, Hard-Limit Z (Lichtschranke + mechanischer Anschlag)
+
+
+Not yet good enough in FRAME
+Langzeit-Feuchtigkeitsbeständigkeit (Stecker, Beschlag, Korrosion) nicht getestet (raspi geht).. Zertifzierung? 
+Remote-Steuerung & Monitoring unter Inkubatorbedingungen (100 % rF) noch nicht ausdauergetestet
+Ein-Klick-GUI für “96-Well-Komplettscan + Zeitraffer” inkl. Fokus-Map/Driftkompensation fehlt als integrierter Workflow
+
+7) Use Case: Space-borne Optical Engine (≤1 L, dual-color fluo + IR AF, fully autonomous)
+Challenge / Requirement
+≤1 L volume, ultra-low mass; only Z-focus + acquisition (XY by host robot)
+Dual-color fluorescence, repeatable radiometric output, minimal drift
+Through-objective IR autofocus (robust under vibration, thermal cycling, micro-g)
+Fully autonomous operation (no user intervention; watchdogs; graceful recovery
+Survivability: launch vibration/shock, radiation/latch-up, vacuum/outgassing, wide temp swings, connector security
+Deterministic boot & mission timeline; data integrity with limited power/thermal budget
+Necessary Hardware Configuration
+Optical engine (inner FRAME cube): compact epi-fluorescence path, dual-color excitation (e.g., 488/635 nm) with keyed dichroic/emission filters; baffle/blackened stray-light control
+IR AF module: 830 nm through-objective off-axis injection, QPD/PSD (preferred) or small CMOS at pupil-conjugate; piezo/voice-coil Z-actuator with position feedback
+Objective & tube: fixed, kinematic hard-lock after calibration; rugged lens clamps; athermal spacers
+Detector: small global-shutter board-CMOS, locked flange; EMI shielding; lens/tube hard-mount
+Thermal/mech: conductive heat path to chassis; conformal coating; thread-locker; safety wire; locking/potted connectors; foam/metal isolators per vibe profile
+Electronics: rad-tolerant or protected DC/DC; latch-up/current limiting; HW watchdog; RTC; isolated GPIO/TTL sync to host robot; low-outgassing cables
+Compute: Raspberry Pi-class SBC (only if accepted by provider) or CM-form-factor; read-only root, journaling data partition; ECC-capable storage; hardware clock
+Firmware/Software: finite-state machine (boot→self-test→cal→acquire→health-report); AF PID with fallback tables; radiometric self-check; telemetry & fault logs; mission script executor
+Not yet good enough in FRAME
+Materials/process: outgassing-rated adhesives, coatings, cable jackets; vibration-qualified mounts/connectors not finalized
+Radiation/SEU strategy: latch-up protection, ECC storage, periodic scrubbing not validated
+Thermal design: conductive paths and athermalization not verified across mission profile
+Autonomy hardening: full watchdog/failsafe/telemetry stack and deterministic boot scripts pendin
+Compactification: optical path, AF sensor, and Z-actuator integration to ≤1 L requires re-packaging and custom brackets
+
+
+8) Use Case: Remote-BSL/Tele-Mikroskopie (inkl. In-Incubator-Betrieb)
+Challenge / Requirement
+Remote-Zugriff (Browser-UI) für kontinuierliche Beobachtung & schnelle Ad-hoc-Inspektion
+BSL-tauglich: wenig Platz, minimale Vor-Ort-Intervention, kontaminationssichere Module (schnell austauschbar/entsorgbar)
+Autonom & fehlertolerant: stabile Laufzeit, Watchdogs, Alarmierung, Audit-Log
+Bildgebung: Immuno-Fluoreszenz (z. B. Corona/Influenza) + label-frei via Phase Contrast / DPC / FPM
+In-Incubator-Option: hohe rF/Temperatur, kondensationsfrei, fokusstabil
+Netzwerk-Härtung: VPN/Zero-Trust (z. B. Tailscale), rollenbasierte Zugriffe, Updates aus der Ferne
+
+
+Necessary Hardware Configuration
+Kompakter FRAME-Core mit abgedichtetem Gehäuse, kinematischen Hot-Swap-Modulen (optische Köpfe/Filter)
+Durchlicht + Phasenkontrast/DPC (LED-Array oder Ring; gleichmäßige Köhler-Beleuchtung)
+Dual-Fluo-Pfad (z. B. 488/635 nm) mit standardisierten Filter-BOMs; stray-light-Baffles
+IR-basierter Through-Objective-Autofokus (off-axis, non-TIR) + feiner Z-Antrieb, Hard-Limit (Lichtschranke/Anschlag)
+Inkubator-Tauglichkeit: beheiztes/antibeschlag-Fenster, korrosionsarme Materialien, abgedichtete LAN/PoE-Durchführung
+Elektronik/Compute: SBC mit HW-Watchdog, read-only Root, Telemetrie; PoE/LAN; verriegelte/entsorgbare Kabelwege
+Sicherheit/Service: modulare Einheiten mit eindeutiger ID, Siegel/Plomben, einfache Entnahme/Wechsel ohne Re-Align
+
+
+Not yet good enough in FRAME
+Remote-Härtung: rollenbasierte Accounts, Audit-Trails, OTA-Update-Pfad, automatisches Recovery noch nicht vollständig
+Langzeittest in 100 % rF (Kondensat/Korrosion/Stecker) ausstehend; Material- und Dichtkonzept finalisieren
+Ein-Klick-Workflows (DPC/FPM/Fluo) mit Fokus-Map/Driftkompensation & Zeitraffer-Scheduler in der Browser-UI fehlen noch
+Hot-Swap-Mechanik: eindeutige Kodierung/Auto-Erkennung der Module, validierte Re-Positioniergenauigkeit in Arbeit
+
+9 Use Case: Entry-level FRAME with Raman Upgrade Path (≤ €22k, EU customer)
+Challenge / Requirement
+Purchase before year-end with budget < €20k; start with brightfield (optionally fluorescence) and add modules later.
+Medium-term goal: Raman spectroscopy integration (laser, filters, spectrometer) with minimal custom engineering.
+Desire to also run FPM and darkfield for high-quality imaging.
+Need Configurator support so users can self-assemble Raman components into the cube form factor and plug into software.
+Necessary Hardware Configuration
+Base optical engine: brightfield Köhler, LED array (for DPC/FPM), darkfield stop or ring-illumination option; rigid tube/ objective mounts with kinematic locks.
+Dual-channel fluorescence (optional): 488/635 nm LEDs/lasers, keyed dichroics & emissions, flat-field kit.
+Raman-ready path (upgrade - but probably on his end, so we help them?):
+Raman cube with fiber ports (FC/PC or FC/APC), safety shutter, beam dump, interlock.
+Laser module (e.g., 532 nm or 785 nm) in cube format with driver, TEC, key-switch, emission indicator - going through our electronics?
+Edge/notch filter set + clean-up filters in keyed holders; optional switchable BF/Fluo/Raman port.
+Spectrometer interface (USB/Ethernet) + SMA/FC fiber to spectrograph; mechanical strain-relief guides.
+Safety: laser class-compliant enclosure, interlocks, watchdogs; labeled modules for quick swap.
+Not yet good enough in FRAME
+Configurator content for Raman: ready-made cube templates (laser, filter, spectrometer, fiber routing), BOM & pin-maps.
+Software drivers: unified Raman device layer (laser power/TEC, spectrometer API), synchronized image+spectra capture in ImSwitch.
+Calibration workflows: Raman wavelength/intensity calibration, dark/flat for FPM/DF, automated safety checks before laser enable.
+Docs/SOPs: step-by-step “Raman upgrade” guide, alignment jigs, hazard assessment; CE laser safety package.
+Software Integration: How would we integrate external hardware components / data sources such as a spectrometer? / external lasers?
+
+Offered to help out and back contribute 
+9 Use Case: Stepwise Onboarding & Module Integration (CoreBox → Module → FRAME)  tvdooren@pm.me, Tom Van Dooren, Stockholm, Chris French
+Use Case — Australia: Galvo Photostimulation → Incubator Imaging (neurons)
+Challenge / Requirement
+Laser galvo photostimulation of neurons with low-latency, deterministic timing.
+
+
+Long-term imaging in an incubator (high rH/temperature) with drift-free focus.
+
+
+Seamless path from standalone galvo rig to cube-form-factor and into FRAME.
+
+
+Remote supervision, safety interlocks, and reproducible calibration.
+
+
+Necessary Hardware Configuration
+Galvo laser head (e.g., 473/488 nm) with TTL/analog control; beam-combiner into epi-path.
+
+
+Through-objective IR autofocus (off-axis, non-TIR) + fine Z stage; hard Z limits.
+
+
+Environmental hood (incubator-capable), anti-condensation window, PoE/LAN.
+
+
+sCMOS/industrial camera with HW triggers; timing hub for galvo–camera sync.
+
+
+Cube adapters + “Configurator” mappings to convert external galvo/laser to UC2 cube format; keyed mounts.
+
+
+One-button workflows: stimulate–image sequences; time-lapse with fail-safe recovery.
+
+
+Not yet good enough in FRAME
+Low-jitter trigger graph (galvo ↔ camera ↔ AF) and validation tools.
+
+
+Incubator durability (100 % rH connectors, coatings) long-run tests.
+
+
+Turnkey galvo-to-cube adapter kits and auto-detection in the Configurator.
+
+
+Safety layer (beam interlocks, watchdogs, log/audit) hardened for unattended runs.
+
+
+
+Use Case — France: Evo-Devo Embryo/Fish Imaging → Field, Multiwell Throughput
+Challenge / Requirement
+Start with Core/Cubes; grow to embryo/fish imaging for evolutionary studies.
+
+
+High-throughput screening in multiwell plates (BF + 2-color fluorescence).
+
+
+Portable/field-capable unit; simple outreach-ready GUI; end-of-year budget constraints.
+
+
+Gentle illumination, large FOV, plate/fish holders, repeatable calibration.
+
+
+Necessary Hardware Configuration
+Modular transmitted-light path (Köhler/LED array) + dual-color epi fluorescence (e.g., 488/635 nm).
+
+
+Objectives spanning macro/meso (e.g., 1–5×, 10×); large-FOV tube lens; plate carriers.
+
+
+IR autofocus with focus map per well; XY tiling; resumable job scheduler.
+
+
+Export to OME-TIFF/OME-Zarr; lightweight review UI for outreach demos.
+
+
+Cube adapters for third-party optics; Configurator to “cubify” external modules quickly.
+
+
+Rugged case, transport safety, PoE/LAN; optional UPS for field use.
+
+
+Not yet good enough in FRAME
+End-to-end multiwell WSI pipeline (tile transforms, QC, one-click export).
+
+
+Field hardening (shock/vibe, dust, quick hot-swap modules) and SOPs.
+
+
+Ready-made fish/embryo fixtures with kinematic registration.
+
+
+Training packs for outreach (preset recipes, guided calibration, auto flat-field).
+
+
+
+
+
+Labautomation Robert Möller Jen
+Additional comments:
+the cubes are quiet large, once we have the setup (e.g. the lenses, filters, cameras tested in a prototpye, it would be straightforward to make a monolithic miniature version out of it without cubes 
+
+
