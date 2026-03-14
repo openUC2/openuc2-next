@@ -69,12 +69,13 @@ export default function ConfiguratorPage() {
             <p className="text-uc2-muted">Start from a pre-built configuration and customize</p>
           </div>
         </ScrollReveal>
+        {/* add a href if clicked */} 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {["Brightfield microscope", "Fluorescence microscope", "Light-sheet (SPIM)", "Michelson interferometer"].map((t, i) => (
             <ScrollReveal key={t} delay={i * 80}>
               <div className="bg-uc2-card border border-uc2-border rounded-xl p-6 text-center hover:border-uc2-blue/50 transition-colors cursor-pointer">
                 <div className="aspect-square bg-uc2-surface-alt rounded-lg mb-4 flex items-center justify-center">
-                  <LayoutGrid className="w-8 h-8 text-uc2-muted/30" />
+                  <img src={`/openuc2-next/images/templates/configurator_${t.replace(/\s/g, "_").toLowerCase()}.png`} alt={t} className="max-w-full max-h-full" />
                 </div>
                 <h4 className="text-sm font-semibold">{t}</h4>
               </div>

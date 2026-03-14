@@ -30,12 +30,18 @@ const openSourceCards = [
 ];
 
 const teamMembers = [
-  { name: "Dr. Benedict Diederich", role: "CEO & Co-Founder" },
-  { name: "Dr. Rene Lachmann", role: "CTO & Co-Founder" },
-  { name: "Barbora Marsikova", role: "Head of Education" },
-  { name: "Xingjian Wang", role: "Mechanical Engineering" },
-  { name: "Haoran Wang", role: "Software Engineering" },
-  { name: "Niklas Netter", role: "Automation Engineer" },
+  { name: "Dr. Benedict Diederich", role: "CEO & Co-Founder | Vision | R&D", imageSrc: "/openuc2-next/images/Benedict.jpg" },
+  { name: "Haoran Wang", role: "CTO | R&D | Production | Logistics", imageSrc: "/openuc2-next/images/Haoran.jpg" },
+  { name: "Sebastian Trampenau", role: "CFO | Financing | Sales | Marketing", imageSrc: "/openuc2-next/images/Sebastian.jpg" },
+  { name: "Christian Kuttke", role: "Electronics design", imageSrc: "/openuc2-next/images/Christian.jpg" },
+  { name: "Armin Grundmann", role: "Product Management", imageSrc: "/openuc2-next/images/Armin.jpg" },
+  { name: "Jens Gerstenberger", role: "Mechanical design | Automation Engineer", imageSrc: "/openuc2-next/images/Jens.jpg" },
+{ name: "Christine Aumüller", role: "Production | Product certification", imageSrc: "/openuc2-next/images/Christine.jpg" },
+{ name: "Ethan Li", role: "Software Engineer", imageSrc: "/openuc2-next/images/Ethan.jpg" },
+{ name: "Florian Paproth", role: "Software Engineer", imageSrc: "/openuc2-next/images/Florian.jpg" },
+{name: "Dr. Johannes Roos", role: "Software Engineer | Application Specialist", imageSrc: "https://avatars.githubusercontent.com/u/3322897?v=4" },
+{name: "Stephan Becker", role: "Automation Engineer | Robotics", imageSrc: "/openuc2-next/images/Stephan.jpg" },
+{name: "Dirk Truckenbrodt", role: "Sales", imageSrc: "/openuc2-next/images/Dirk.jpg" },
 ];
 
 export default function AboutPage() {
@@ -81,10 +87,10 @@ export default function AboutPage() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={120}>
-            <PlaceholderImage
-              text="Team photo / Lab photo — the openUC2 team in Jena"
-              aspectRatio="4/3"
-              bgColor="#d1d9e6"
+            <img
+              src="/openuc2-next/images/Team.jpg"
+              alt="Collage of early UC2 prototypes, the original Nature Communications paper, and photos of the founders working in the lab"
+              className="rounded-lg border border-uc2-border"
             />
           </ScrollReveal>
         </div>
@@ -123,13 +129,24 @@ export default function AboutPage() {
           {teamMembers.map((m, i) => (
             <ScrollReveal key={m.name} delay={i * 60}>
               <div className="text-center">
-                <div className="w-28 h-28 mx-auto rounded-full bg-uc2-surface-alt border border-uc2-border flex items-center justify-center text-uc2-muted text-3xl font-bold mb-3">
-                  {m.name
-                    .replace(/Dr\.\s?/, "")
-                    .split(" ")
-                    .map((w) => w[0])
+                {/* replace with imageSrc when available, but don't distort them, keep aspect ratio */}
+                {m.imageSrc ? (
+                  <img
+                    src={m.imageSrc}
+                    alt={m.name}
+                    // ensure its aspect ratio is preserved and it fits within a 100x100 box, with a circular mask
+                    className="w-50 h-50 mx-auto rounded-full object-cover border border-uc2-border mb-3"
+                  />
+                ) : (
+                  <div className="w-50 h-50 mx-auto rounded-full bg-uc2-muted/10 text-uc2-muted flex items-center justify-center mb-3">
+                    {m.name
+                      .replace(/Dr\.\s?/, "")
+                      .split(" ")
+                        .map((w) => w[0])
                     .join("")}
                 </div>
+                )}
+
                 <h3 className="font-semibold text-sm">{m.name}</h3>
                 <p className="text-xs text-uc2-muted">{m.role}</p>
               </div>
@@ -173,10 +190,18 @@ export default function AboutPage() {
               </cite>
             </blockquote>
           </ScrollReveal>
+          <ScrollReveal delay={160}>
+            <blockquote className="bg-uc2-card border border-uc2-border rounded-xl p-6">
+              <p className="text-uc2-text leading-relaxed mb-2">
+                <BookOpen className="inline w-4 h-4 mr-2 text-uc2-blue" />
+                H.&nbsp;Wang et&nbsp;al., &ldquo;UCsim2: Two-dimensionally structured illumination microscopy using UC2,&rdquo; <em>Philosophical Transactions of the Royal Society A</em>, 2022.
+              </p>
+            </blockquote>
+          </ScrollReveal>
         </div>
         <p className="mt-6">
           <a
-            href="https://scholar.google.com/citations?user=PLACEHOLDER"
+            href="https://scholar.google.com/citations?hl=de&user=TvSHTGkAAAAJ&view_op=list_works&sortby=pubdate"
             target="_blank"
             rel="noopener noreferrer"
             className="text-uc2-blue hover:underline text-sm"

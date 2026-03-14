@@ -42,7 +42,7 @@ export function Header() {
       <div className="max-w-[1140px] mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-          <img src="/openuc2-next/images/logo-text.png" alt="openUC2" className="h-8 w-auto" />
+          <img src="/images/logo-text.png" alt="openUC2" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop nav */}
