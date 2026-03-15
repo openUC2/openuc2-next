@@ -271,7 +271,7 @@ export default function HomePage() {
         {/* FRAME */}
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <PlaceholderImage text="FRAME microscope — professional enclosure with stage, fluorescence module, camera" aspectRatio="16/10" bgColor="bg-uc2-blue/10" />
+            <img src="/openuc2-next/images/frame2.png" alt="FRAME microscope with motorized stage and fluorescence cubes" className="rounded-lg border border-uc2-border" />
             <div>
               <Tag variant="pro">Professional</Tag>
               <h3 className="text-2xl font-bold mt-3 mb-3">FRAME — Automated Microscope</h3>
