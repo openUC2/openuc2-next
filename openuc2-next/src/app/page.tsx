@@ -5,6 +5,8 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { LogoStrip } from "@/components/ui/LogoStrip";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { HeroVideo } from "@/components/home/HeroVideo";
+import { LottieScrollReveal } from "@/components/ui/LottieScrollReveal";
+import { CubeScrollAnimation } from "@/components/home/CubeScrollAnimation";
 
 const personas = [
   {
@@ -71,25 +73,29 @@ const appPreviews = [
 ];
 
 const logos = [
-  "Leibniz Institute",
-  "Janelia / HHMI",
-  "University of Jena",
-  "Seeed Studio",
-  "Lichtwerkstatt",
-  "Max Planck Institute",
-  "ETH Zurich",
+  { name: "Janelia / HHMI", src: "/openuc2-next/images/logos/janelia.png" },
+  { name: "Bundesministerium für Forschung, Technologie und Raumfahrt (BMFRT)", src: "/openuc2-next/images/logos/bmftr.png" },
+  { name: "European Union (EU)", src: "/openuc2-next/images/logos/eu.png" },
+  { name: "Autodesk", src: "/openuc2-next/images/logos/autodesk.png" },
+  { name: "Seeed Studio", src: "/openuc2-next/images/logos/seeed.webp" },
+  { name: "Lichtwerkstatt", src: "/openuc2-next/images/logos/lichtwerkstatt.png" },
+  { name: "Max Delbrück Center Helmholtz Institute", src: "/openuc2-next/images/logos/mdc.png" },
+  { name: "ETH Zurich", src: "/openuc2-next/images/logos/eth.png" },
 ];
 
 export default function HomePage() {
   return (
     <>
+      {/* ===== 3D CUBE SCROLL ANIMATION (background) ===== */}
+      <CubeScrollAnimation />
+
       {/* ===== HERO WITH VIDEO ===== */}
       <HeroVideo />
 
       {/* ===== TRUSTED BY ===== */}
       <div className="bg-uc2-light border-b border-uc2-border">
         <div className="max-w-[1140px] mx-auto px-6">
-          <p className="text-center text-[11px] uppercase tracking-[0.08em] text-uc2-gray font-semibold pt-6">
+          <p className="text-center text-[11px] uppercase tracking-[0.18em] text-uc2-gray font-semibold pt-6">
             Used in research at
           </p>
           <LogoStrip logos={logos} />
@@ -110,9 +116,12 @@ export default function HomePage() {
         </ScrollReveal>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <ScrollReveal>
-            <img src="/openuc2-next/images/spiral.png" alt="UC2 Ecosystem Diagram" className="rounded-lg border border-uc2-border" />
-          </ScrollReveal>
+          <LottieScrollReveal
+            src="/openuc2-next/lottie/UC2_spiral.json"
+            alt="UC2 Spiral Build-Up Animation"
+            className="rounded-lg border border-uc2-border overflow-hidden"
+            preLoad={0.3}
+          />
           <ScrollReveal delay={150}>
             <h3 className="text-xl font-semibold mb-4">From optical principle to working instrument</h3>
             <p className="text-uc2-muted mb-4">

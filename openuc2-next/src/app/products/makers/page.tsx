@@ -4,6 +4,7 @@ import { Box, Cpu, Code, LayoutGrid, FileText, Users, Wrench } from "lucide-reac
 import { Section, CTABanner, FeatureCard, Tag } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { image } from "framer-motion/client";
 
 export const metadata: Metadata = {
   title: "Open Platform & Community — Makers",
@@ -49,16 +50,19 @@ const communityBuilds = [
     title: "Incubator microscope",
     desc: "A PhD student in Berlin built a time-lapse microscope that sits inside a CO2 incubator. Uses ESP32 WiFi for remote control.",
     user: "Community build",
+    imageSrc: "/openuc2-next/images/incuscope.jpg",
   },
   {
     title: "Automated blood smear scanner",
     desc: "A clinic in Nigeria assembled a brightfield scanner from 3D-printed cubes and a Raspberry Pi. Scans malaria samples at 10x.",
     user: "Community build",
+    imageSrc: "/openuc2-next/images/shitscope.png",
   },
   {
     title: "DIY light-sheet microscope",
     desc: "A group of undergrads in Munich built a light-sheet microscope for their thesis project, including a custom sample chamber. Total cost under EUR 500.",
     user: "Community build",
+    imageSrc: "/openuc2-next/images/lightsheet.jpeg",
   },
 ];
 
@@ -100,11 +104,7 @@ export default function MakersPage() {
               </a>
             </div>
           </div>
-          <PlaceholderImage
-            text="Community builds montage — 3D-printed cubes, soldering, custom microscopes"
-            aspectRatio="4/3"
-            bgColor="bg-uc2-accent/10"
-          />
+          <img src="/openuc2-next/images/course2.JPG" alt="Collage of open-source microscope components: 3D-printed cubes, circuit boards, and software screenshots" className="rounded-lg border border-uc2-border" />
         </div>
       </Section>
 
@@ -136,7 +136,7 @@ export default function MakersPage() {
             <ScrollReveal key={cb.title} delay={i * 100}>
               <div className="bg-uc2-card border border-uc2-border rounded-xl overflow-hidden hover:border-uc2-accent/50 transition-colors">
                 <div className="aspect-video bg-uc2-surface-alt flex items-center justify-center">
-                  <Wrench className="w-8 h-8 text-uc2-muted/30" />
+                  <img src={cb.imageSrc} alt={cb.title} className="object-cover w-full h-full" />
                 </div>
                 <div className="p-5">
                   <h4 className="font-semibold mb-2">{cb.title}</h4>

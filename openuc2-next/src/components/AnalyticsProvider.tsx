@@ -11,11 +11,17 @@ export function AnalyticsProvider() {
 
   useEffect(() => {
     const stored = localStorage.getItem("uc2_cookie_consent");
-    if (stored === "all") setConsent(true);
+    setConsent(stored === "all");
 
     const handler = () => {
       const updated = localStorage.getItem("uc2_cookie_consent");
-      if (updated === "all") setConsent(true);
+      if (updated === "all") {
+        setConsent(true);
+      } else {
+        // Consent revoked — reload page to fully remove analytics scripts
+        setConsent(false);
+        window.location.reload();
+      }
     };
     window.addEventListener("storage", handler);
     window.addEventListener("uc2_consent", handler);

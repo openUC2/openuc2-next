@@ -80,11 +80,39 @@ const infoCards = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // In production, submit to server endpoint
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    // Web3Forms: free frontend-only email service
+    // Replace the access_key with your real key from https://web3forms.com/
+    data.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY");
+    data.append("from_name", "openUC2 Website");
+    data.append("subject", data.get("subject") as string || "New contact form submission");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again or email us directly.");
+      }
+    } catch {
+      setError("Network error. Please try again or email us directly at hello@openuc2.com.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -115,6 +143,9 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot field for spam prevention */}
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-1">
                       Name *
@@ -201,11 +232,18 @@ export default function ContactPage() {
                     .
                   </p>
 
+                  {error && (
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-sm text-red-700">
+                      {error}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-uc2-blue text-white font-semibold rounded-lg hover:brightness-110 transition-all"
+                    disabled={sending}
+                    className="px-6 py-3 bg-uc2-blue text-white font-semibold rounded-lg hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send message
+                    {sending ? "Sending..." : "Send message"}
                   </button>
                 </form>
               )}
