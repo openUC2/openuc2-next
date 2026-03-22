@@ -4,6 +4,8 @@ import { Zap, Infinity, Lightbulb, Disc3, Ruler, Sparkles, BookText, School, Gra
 import { Section, CTABanner, FeatureCard, Tag } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { img } from "framer-motion/client";
+import { IMAGES_MANIFEST } from "next/dist/shared/lib/constants";
 
 export const metadata: Metadata = {
   title: "Discovery Line — Educational Optics Kits",
@@ -23,7 +25,9 @@ const addons = [
   {
     icon: <Zap className="w-5 h-5" />,
     title: "Electronics Add-On",
+    slug: "electronics",
     shopLink: "https://shop.openuc2.com/shop/kit-electronics-elt-25-02-discovery-electronics-add-on-1593",
+    imgSrc: "/openuc2-next/images/addons/electronics.webp",
     price: "EUR 549",
     description:
       "Adds ESP32 microcontroller, stepper motors, LED matrix, and USB camera. Transform your analog microscope into a computer-controlled imaging system. Requires: CoreBox.",
@@ -31,30 +35,38 @@ const addons = [
   {
     icon: <Infinity className="w-5 h-5" />,
     title: "Infinity Add-On",
+    slug: "infinity",
     shopLink: "https://shop.openuc2.com/shop/discovery-infinity-add-on-153",
     price: "EUR 749",
+    imgSrc: "/openuc2-next/images/addons/infinity.webp",
     description:
       "Upgrade to infinity-corrected optics with a tube lens and RMS objective. Camera-based digital imaging with proper Koehler illumination. Requires: CoreBox + Electronics.",
   },
   {
     icon: <Lightbulb className="w-5 h-5" />,
     title: "Fluorescence LED Add-On",
+    slug: "fluorescence-led",
     price: "EUR 699",
+    imgSrc: "/openuc2-next/images/addons/fluorescence-led.webp",
     description:
       "Adds a 488 nm LED excitation source, dichroic mirror cube, and emission filter. Real fluorescence microscopy on a student budget. Requires: CoreBox + Electronics + Infinity.",
   },
   {
     icon: <Disc3 className="w-5 h-5" />,
     title: "Fluorescence Laser Add-On",
+    slug: "fluorescence-laser",
     shopLink: "https://shop.openuc2.com/shop/discovery-fluorescence-add-on-led-488nm-159",
     price: "EUR 1,199",
+    imgSrc: "/openuc2-next/images/addons/fluorescence-laser.webp",
     description:
       "488 nm laser excitation for higher-intensity fluorescence imaging. Includes safety enclosure and alignment tools. Requires: CoreBox + Electronics + Infinity.",
   },
   {
     icon: <Ruler className="w-5 h-5" />,
     title: "Light-Sheet Add-On",
+    slug: "light-sheet",
     price: "EUR 999",
+    imgSrc: "/openuc2-next/images/addons/light-sheet.webp",
     shopLink: "https://shop.openuc2.com/shop/discovery-light-sheet-add-on-154",
     description:
       "Build an actual selective plane illumination microscope (SPIM) from cubes. Cylindrical lens, sample chamber, and orthogonal detection path. Requires: CoreBox + Electronics + Infinity.",
@@ -62,6 +74,7 @@ const addons = [
   {
     icon: <Sparkles className="w-5 h-5" />,
     title: "More coming soon",
+    slug: "",
     price: "",
     description:
       "We're continuously developing new add-ons. Join our community forum to suggest and vote on future kits.",
@@ -211,29 +224,47 @@ export default function DiscoveryPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {addons.map((addon, i) => (
             <ScrollReveal key={addon.title} delay={i * 80}>
-              <div className={`bg-uc2-card border ${addon.price ? "border-uc2-border" : "border-dashed border-uc2-border"} rounded-xl p-6 hover:border-uc2-blue/50 transition-colors h-full flex flex-col`}>
-                <div className="w-10 h-10 rounded-lg bg-uc2-blue/20 text-uc2-blue flex items-center justify-center mb-4">
-                  {addon.icon}
-                </div>
-                <h4 className="font-semibold mb-1">
-                  {addon.title}
-                  {addon.price && (
-                    <span className="inline-block bg-uc2-green/20 text-uc2-green text-xs font-semibold px-2 py-0.5 rounded-full ml-2">
-                      {addon.price}
-                    </span>
-                  )}
-                </h4>
-                <p className="text-sm text-uc2-muted leading-relaxed mb-4 flex-1">{addon.description}</p>
+              <div className={`group bg-uc2-card border ${addon.price ? "border-uc2-border" : "border-dashed border-uc2-border"} rounded-xl overflow-hidden hover:border-uc2-blue/50 transition-colors h-full flex flex-col`}>
+                {/* Hover image placeholder */}
                 {addon.price && (
-                  <a
-                    href={addon.shopLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block text-center px-4 py-2 bg-uc2-green text-white text-sm font-semibold rounded-lg hover:brightness-110 transition-all"
-                  >
-                    Buy Now
-                  </a>
+                  <div className="relative h-40 bg-uc2-surface-alt flex items-center justify-center overflow-hidden">
+                    <img src={addon.imgSrc} alt={`${addon.title} image`} className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
                 )}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="w-10 h-10 rounded-lg bg-uc2-blue/20 text-uc2-blue flex items-center justify-center mb-4">
+                    {addon.icon}
+                  </div>
+                  <h4 className="font-semibold mb-1">
+                    {addon.title}
+                    {addon.price && (
+                      <span className="inline-block bg-uc2-green/20 text-uc2-green text-xs font-semibold px-2 py-0.5 rounded-full ml-2">
+                        {addon.price}
+                      </span>
+                    )}
+                  </h4>
+                  <p className="text-sm text-uc2-muted leading-relaxed mb-4 flex-1">{addon.description}</p>
+                  {addon.price && (
+                    <div className="flex flex-wrap gap-2">
+                      <a
+                        href={addon.shopLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block text-center px-4 py-2 bg-uc2-green text-white text-sm font-semibold rounded-lg hover:brightness-110 transition-all"
+                      >
+                        Buy Now
+                      </a>
+                      {addon.slug && (
+                        <Link
+                          href={`/products/discovery/${addon.slug}`}
+                          className="inline-block text-center px-4 py-2 border border-uc2-blue text-uc2-blue text-sm font-semibold rounded-lg hover:bg-uc2-blue/10 transition-colors"
+                        >
+                          More Information
+                        </Link>
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
             </ScrollReveal>
           ))}

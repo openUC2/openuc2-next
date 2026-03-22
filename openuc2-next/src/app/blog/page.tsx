@@ -25,6 +25,7 @@ export default function BlogPage() {
       </section>
 
       <Section>
+        <div className="max-w-4xl mx-auto">
         {posts.length === 0 ? (
           <p className="text-uc2-muted">No posts yet. Check back soon!</p>
         ) : (
@@ -33,14 +34,17 @@ export default function BlogPage() {
               <ScrollReveal key={post.slug} delay={i * 80}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group block bg-uc2-card border border-uc2-border rounded-xl overflow-hidden hover:border-uc2-blue/50 transition-colors"
+                  className="group block bg-uc2-card border border-uc2-border rounded-xl overflow-hidden hover:border-uc2-blue/50 hover:shadow-lg transition-all"
                 >
-                  {/* Color cover */}
+                  {/* Cover with placeholder image area */}
                   <div
-                    className="h-40 flex items-end p-6"
+                    className="h-48 flex flex-col items-center justify-end p-6 relative"
                     style={{ background: post.coverColor }}
                   >
-                    <h2 className="text-xl font-bold text-white group-hover:underline">
+                    <div className="absolute top-4 right-4 w-16 h-16 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center">
+                      <span className="text-[10px] text-white/50">IMG</span>
+                    </div>
+                    <h2 className="text-xl font-bold text-white group-hover:underline w-full">
                       {post.title}
                     </h2>
                   </div>
@@ -59,12 +63,16 @@ export default function BlogPage() {
                     <p className="text-sm text-uc2-muted leading-relaxed">
                       {post.excerpt}
                     </p>
+                    <span className="inline-block mt-4 text-sm text-uc2-blue font-medium group-hover:underline">
+                      Read more →
+                    </span>
                   </div>
                 </Link>
               </ScrollReveal>
             ))}
           </div>
         )}
+        </div>
       </Section>
     </>
   );

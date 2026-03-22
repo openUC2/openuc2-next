@@ -30,18 +30,18 @@ const openSourceCards = [
 ];
 
 const teamMembers = [
-  { name: "Dr. Benedict Diederich", role: "CEO & Co-Founder | Vision | R&D", imageSrc: "/openuc2-next/images/Benedict.jpg" },
-  { name: "Haoran Wang", role: "CTO | R&D | Production | Logistics", imageSrc: "/openuc2-next/images/Haoran.jpg" },
-  { name: "Sebastian Trampenau", role: "CFO | Financing | Sales | Marketing", imageSrc: "/openuc2-next/images/Sebastian.jpg" },
-  { name: "Christian Kuttke", role: "Electronics design", imageSrc: "/openuc2-next/images/Christian.jpg" },
-  { name: "Armin Grundmann", role: "Product Management", imageSrc: "/openuc2-next/images/Armin.jpg" },
-  { name: "Jens Gerstenberger", role: "Mechanical design | Automation Engineer", imageSrc: "/openuc2-next/images/Jens.jpg" },
-{ name: "Christine Aumüller", role: "Production | Product certification", imageSrc: "/openuc2-next/images/Christine.jpg" },
-{ name: "Ethan Li", role: "Software Engineer", imageSrc: "/openuc2-next/images/Ethan.jpg" },
-{ name: "Florian Paproth", role: "Software Engineer", imageSrc: "/openuc2-next/images/Florian.jpg" },
-{name: "Dr. Johannes Roos", role: "Software Engineer | Application Specialist", imageSrc: "https://avatars.githubusercontent.com/u/3322897?v=4" },
-{name: "Stephan Becker", role: "Automation Engineer | Robotics", imageSrc: "/openuc2-next/images/Stephan.jpg" },
-{name: "Dirk Truckenbrodt", role: "Sales", imageSrc: "/openuc2-next/images/Dirk.jpg" },
+  { name: "Dr. Benedict Diederich", role: "CEO & Co-Founder | Vision | R&D", imageSrc: "/openuc2-next/images/Benedict.jpg", bio: "Physicist and inventor of the UC2 system. Benedict leads the company vision and drives R&D. Published in Nature Communications and Nature Methods." },
+  { name: "Haoran Wang", role: "CTO | R&D | Production | Logistics", imageSrc: "/openuc2-next/images/Haoran.jpg", bio: "Hardware and optics expert responsible for production, quality assurance, and logistics. Key architect of the FRAME microscope." },
+  { name: "Sebastian Trampenau", role: "CFO | Financing | Sales | Marketing", imageSrc: "/openuc2-next/images/Sebastian.jpg", bio: "Business strategist managing finances, sales operations, and marketing. Drives partnerships and commercial growth." },
+  { name: "Christian Kuttke", role: "Electronics design", imageSrc: "/openuc2-next/images/Christian.jpg", bio: "Electronics engineer designing the UC2 control boards, motor drivers, and LED controllers. Expert in ESP32-based systems." },
+  { name: "Armin Grundmann", role: "Product Management", imageSrc: "/openuc2-next/images/Armin.jpg", bio: "Manages product development lifecycle from concept to delivery. Coordinates between engineering and customer needs." },
+  { name: "Jens Gerstenberger", role: "Mechanical design | Automation Engineer", imageSrc: "/openuc2-next/images/Jens.jpg", bio: "Mechanical engineer specializing in precision mechanics and automation. Designs cube modules and stage assemblies." },
+  { name: "Christine Aumüller", role: "Production | Product certification", imageSrc: "/openuc2-next/images/Christine.jpg", bio: "Oversees production workflows and ensures product certification and compliance for educational and research markets." },
+  { name: "Ethan Li", role: "Software Engineer", imageSrc: "/openuc2-next/images/Ethan.jpg", bio: "Software developer contributing to ImSwitch and the UC2 web ecosystem. Focuses on microscopy control and automation." },
+  { name: "Florian Paproth", role: "Software Engineer", imageSrc: "/openuc2-next/images/Florian.jpg", bio: "Software engineer working on firmware, web interfaces, and system integration for the UC2 platform." },
+  { name: "Dr. Johannes Roos", role: "Software Engineer | Application Specialist", imageSrc: "https://avatars.githubusercontent.com/u/3322897?v=4", bio: "Software engineer and application specialist bridging microscopy workflows with software development." },
+  { name: "Stephan Becker", role: "Automation Engineer | Robotics", imageSrc: "/openuc2-next/images/Stephan.jpg", bio: "Automation and robotics expert integrating UC2 with lab automation systems and robotic sample handling." },
+  { name: "Dirk Truckenbrodt", role: "Sales", imageSrc: "/openuc2-next/images/Dirk.jpg", bio: "Sales specialist connecting openUC2 products with educational institutions, labs, and research organizations." },
 ];
 
 export default function AboutPage() {
@@ -128,24 +128,29 @@ export default function AboutPage() {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
           {teamMembers.map((m, i) => (
             <ScrollReveal key={m.name} delay={i * 60}>
-              <div className="text-center">
-                {/* replace with imageSrc when available, but don't distort them, keep aspect ratio */}
-                {m.imageSrc ? (
-                  <img
-                    src={m.imageSrc}
-                    alt={m.name}
-                    // ensure its aspect ratio is preserved and it fits within a 100x100 box, with a circular mask
-                    className="w-50 h-50 mx-auto rounded-full object-cover border border-uc2-border mb-3"
-                  />
-                ) : (
-                  <div className="w-50 h-50 mx-auto rounded-full bg-uc2-muted/10 text-uc2-muted flex items-center justify-center mb-3">
-                    {m.name
-                      .replace(/Dr\.\s?/, "")
-                      .split(" ")
+              <div className="text-center group">
+                <div className="relative w-50 h-50 mx-auto mb-3">
+                  {/* Image (visible by default, hidden on hover) */}
+                  {m.imageSrc ? (
+                    <img
+                      src={m.imageSrc}
+                      alt={m.name}
+                      className="w-50 h-50 rounded-full object-cover border border-uc2-border absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                  ) : (
+                    <div className="w-50 h-50 rounded-full bg-uc2-muted/10 text-uc2-muted flex items-center justify-center absolute inset-0 transition-opacity duration-300 group-hover:opacity-0">
+                      {m.name
+                        .replace(/Dr\.\s?/, "")
+                        .split(" ")
                         .map((w) => w[0])
-                    .join("")}
+                        .join("")}
+                    </div>
+                  )}
+                  {/* Bio text (hidden by default, shown on hover) */}
+                  <div className="w-50 h-50 rounded-full bg-uc2-blue text-white flex items-center justify-center p-4 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <p className="text-[11px] leading-snug text-center">{m.bio}</p>
+                  </div>
                 </div>
-                )}
 
                 <h3 className="font-semibold text-sm">{m.name}</h3>
                 <p className="text-xs text-uc2-muted">{m.role}</p>

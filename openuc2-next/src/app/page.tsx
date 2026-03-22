@@ -96,7 +96,7 @@ export default function HomePage() {
       <div className="bg-uc2-light border-b border-uc2-border">
         <div className="max-w-[1140px] mx-auto px-6">
           <p className="text-center text-[11px] uppercase tracking-[0.18em] text-uc2-gray font-semibold pt-6">
-            Used in research at
+            Partners
           </p>
           <LogoStrip logos={logos} />
         </div>
@@ -183,13 +183,13 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/applications/fluorescence"
-                className="px-4 py-2 text-sm border border-uc2-border text-uc2-text rounded-lg hover:bg-uc2-surface-alt transition-colors"
+                className="px-4 py-2 text-sm border bg-uc2-blue text-white rounded-lg hover:bg-uc2-surface-alt transition-colors"
               >
                 Fluorescence example
               </Link>
               <Link
                 href="/applications/education"
-                className="px-4 py-2 text-sm border border-uc2-border text-uc2-text rounded-lg hover:bg-uc2-surface-alt transition-colors"
+                className="px-4 py-2 text-sm border bg-uc2-blue text-white rounded-lg hover:bg-uc2-surface-alt transition-colors"
               >
                 Education example
               </Link>
@@ -261,13 +261,13 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/products/makers"
-                  className="px-6 py-3 border border-uc2-border text-uc2-text font-semibold rounded-lg hover:bg-uc2-surface-alt transition-colors"
+                  className="px-6 py-3 bg-uc2-accent text-white font-semibold rounded-lg hover:brightness-110 transition-all"
                 >
                   Open Platform
                 </Link>
                 <Link
                   href="/configurator"
-                  className="px-6 py-3 border border-uc2-border text-uc2-text font-semibold rounded-lg hover:bg-uc2-surface-alt transition-colors"
+                  className="px-6 py-3 bg-uc2-blue text-white font-semibold rounded-lg hover:brightness-110 transition-all"
                 >
                   Configurator
                 </Link>
@@ -335,6 +335,42 @@ export default function HomePage() {
               </Link>
             </ScrollReveal>
           ))}
+        </div>
+      </Section>
+
+      {/* ===== FUNDING AGENCIES ===== */}
+      <Section>
+        <ScrollReveal>
+          <div className="text-center mb-1">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">Funded by</h2>
+            <p className="text-uc2-muted">Supported by leading European research funding programs.</p>
+          </div>
+        </ScrollReveal>
+        <div className="flex flex-wrap justify-center items-center gap-12">
+          <ScrollReveal>
+            <div className="flex flex-col items-center gap-1">
+              <div className="w-70 h-40 rounded-lg bg-uc2-surface-alt border border-uc2-border flex items-center justify-center">
+                <img src="/openuc2-next/images/logos/tab.png" alt="Thüringer Aufbaubank Logo" className="h-16" />
+              </div>
+              <span className="text-xs text-uc2-muted text-center max-w-[200px]">Thüringer Aufbaubank (TAB)</span>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="flex flex-col items-center gap-1">
+              <div className="w-70 h-40 rounded-lg bg-uc2-surface-alt border border-uc2-border flex items-center justify-center">
+                <img src="/openuc2-next/images/logos/eu.png" alt="European Union Logo" className="h-16" />
+              </div>
+              <span className="text-xs text-uc2-muted text-center max-w-[200px]">European Union and the local EFRE Structural Fund in Thuringia</span>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <div className="flex flex-col items-center gap-1">
+              <div className="w-70 h-40 rounded-lg bg-uc2-surface-alt border border-uc2-border flex items-center justify-center">
+                <img src="/openuc2-next/images/logos/bmftr.png" alt="BMFRT Logo" className="h-25" />
+              </div>
+              <span className="text-xs text-uc2-muted text-center max-w-[200px]">Bundesministerium für Forschung, Technologie und Raumfahrt</span>
+            </div>
+          </ScrollReveal>
         </div>
       </Section>
 

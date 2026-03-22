@@ -170,6 +170,14 @@ export default function MakersPage() {
                 <li className="flex gap-2"><span className="text-uc2-muted/50">-</span> Assembly time required</li>
                 <li className="flex gap-2"><span className="text-uc2-muted/50">-</span> Quality depends on your 3D printer</li>
               </ul>
+              <div className="flex flex-wrap gap-3 mt-6">
+                <a href="https://github.com/openUC2/" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-uc2-accent text-white text-sm font-semibold rounded-lg hover:brightness-110 transition-all">
+                  GitHub Repository
+                </a>
+                <Link href="/configurator" className="px-5 py-2.5 border border-uc2-accent text-uc2-accent text-sm font-semibold rounded-lg hover:bg-uc2-accent/10 transition-colors">
+                  Configurator
+                </Link>
+              </div>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={150}>
@@ -183,6 +191,11 @@ export default function MakersPage() {
                 <li className="flex gap-2"><span className="text-uc2-muted/50">-</span> Higher upfront cost</li>
                 <li className="flex gap-2"><span className="text-uc2-muted/50">-</span> Fixed set of components</li>
               </ul>
+              <div className="mt-6">
+                <a href="https://shop.openuc2.com/" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-uc2-blue text-white text-sm font-semibold rounded-lg hover:brightness-110 transition-all">
+                  Visit Shop
+                </a>
+              </div>
             </div>
           </ScrollReveal>
         </div>

@@ -30,10 +30,10 @@ export default async function BlogPostPage({ params }: PageProps) {
     <>
       {/* Hero */}
       <div
-        className="pt-28 pb-12"
+        className="pt-28 pb-16"
         style={{ background: post.coverColor }}
       >
-        <div className="max-w-[800px] mx-auto px-6">
+        <div className="max-w-3xl mx-auto px-8 md:px-12">
           <Link
             href="/blog"
             className="inline-flex items-center gap-1 text-sm text-white/70 hover:text-white mb-6"
@@ -57,9 +57,16 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       </div>
 
+      {/* Featured image placeholder */}
+      <div className="max-w-3xl mx-auto px-8 md:px-12 -mt-8">
+        <div className="aspect-[21/9] rounded-xl bg-uc2-surface-alt border border-uc2-border flex items-center justify-center shadow-lg">
+          <span className="text-sm text-uc2-muted">Featured image — coming soon</span>
+        </div>
+      </div>
+
       {/* Content */}
       <Section>
-        <article className="max-w-[800px] mx-auto prose prose-sm prose-headings:font-semibold prose-a:text-uc2-blue prose-a:no-underline hover:prose-a:underline">
+        <article className="max-w-3xl mx-auto px-2 md:px-6 prose prose-lg prose-headings:font-semibold prose-a:text-uc2-blue prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:border prose-img:border-uc2-border">
           <MDXRemote source={post.content} />
         </article>
       </Section>

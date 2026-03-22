@@ -58,9 +58,9 @@ export function HeroVideo() {
       {/* Content */}
       <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-20 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-          Microscopy you can build,
+          A microscope you can modify,
           <br />
-          configure, and own.
+          extend, and share.
         </h1>
         <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-14">
           An open-source modular platform that scales from teaching fundamental optics to running
@@ -76,7 +76,7 @@ export function HeroVideo() {
               className="group block bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-6 text-left hover:bg-white/15 hover:border-white/25 transition-all"
             >
               <div className="text-white/80 mb-3">{p.icon}</div>
-              <Tag variant={p.tagVariant}>{p.tag}</Tag>
+              <Tag variant={p.tagVariant} className={p.tagVariant === 'pro' ? 'text-white' : undefined}>{p.tag}</Tag>
               <h3 className="text-lg font-semibold text-white mt-3 mb-2">{p.title}</h3>
               <p className="text-sm text-white/70 mb-4 leading-relaxed">{p.description}</p>
               <span className="text-sm text-uc2-green font-medium group-hover:underline">

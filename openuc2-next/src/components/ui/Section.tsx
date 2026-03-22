@@ -40,7 +40,7 @@ export function CTABanner({
   secondaryHref,
 }: CTABannerProps) {
   return (
-    <div className="rounded-2xl bg-gradient-to-br from-uc2-blue to-uc2-blue/80 p-10 md:p-14 text-center">
+    <div className="rounded-2xl bg-gradient-to-br from-uc2-blue/80 to-uc2-blue/60 p-10 md:p-14 text-center">
       <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{title}</h2>
       <p className="text-white/80 mb-8 max-w-lg mx-auto">{description}</p>
       <div className="flex flex-wrap justify-center gap-4">
@@ -73,7 +73,7 @@ export function SpecsTable({ rows }: SpecsTableProps) {
       <tbody>
         {rows.map(([label, value], i) => (
           <tr key={i} className="border-b border-uc2-border">
-            <th className="text-left py-3 pr-4 text-uc2-muted font-medium w-2/5">{label}</th>
+            <th className="text-left py-3 pr-4 text-white font-medium w-2/5">{label}</th>
             <td className="py-3 text-uc2-text">{value}</td>
           </tr>
         ))}
@@ -103,16 +103,17 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
 interface TagProps {
   variant: "edu" | "pro" | "maker";
   children: ReactNode;
+  className?: string;
 }
 
-export function Tag({ variant, children }: TagProps) {
+export function Tag({ variant, children, className }: TagProps) {
   const colors = {
     edu: "bg-uc2-green/20 text-uc2-green",
     pro: "bg-uc2-blue/20 text-uc2-blue",
     maker: "bg-uc2-accent/20 text-uc2-accent",
   };
   return (
-    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${colors[variant]}`}>
+    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${colors[variant]} ${className ?? ''}`}>
       {children}
     </span>
   );

@@ -47,8 +47,8 @@ export function Header() {
         {/* Desktop nav */}
         <ul className="hidden lg:flex items-center gap-1 text-sm">
           <li>
-            <Link href="/#how-it-works" className="px-3 py-2 text-uc2-gray hover:text-uc2-blue transition-colors">
-              Technology
+            <Link href="/" className="px-3 py-2 text-uc2-gray hover:text-uc2-blue transition-colors">
+              Home
             </Link>
           </li>
 
@@ -180,8 +180,8 @@ export function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-uc2-border max-h-[calc(100vh-64px)] overflow-y-auto">
           <div className="px-6 py-4 space-y-1">
-            <Link href="/#how-it-works" onClick={() => setMobileOpen(false)} className="block py-2 text-uc2-text hover:text-uc2-blue">
-              Technology
+            <Link href="/" onClick={() => setMobileOpen(false)} className="block py-2 text-uc2-text hover:text-uc2-blue">
+              Home
             </Link>
             <div className="py-2">
               <div className="text-[11px] uppercase tracking-wider text-uc2-gray mb-1">Products</div>
