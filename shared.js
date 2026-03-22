@@ -48,8 +48,7 @@ function getNav(activePage) {
             <a href="${b}applications/dnafish.html">DNA-FISH &amp; Genomic Imaging</a>
             <div class="dd-label" style="margin-top:8px">Specialist Applications</div>
             <a href="${b}applications/remotebsl.html">Remote &amp; BSL Microscopy</a>
-            <a href="${b}applications/raman.html">Raman Upgrade Path</a>
-            <a href="${b}applications/space.html">Space-Borne Optical Engine</a>
+            <a href="${b}applications/lab.html">Lab Automation</a>
             <div class="dd-label" style="margin-top:8px">Learning & Community</div>
             <a href="${b}applications/education.html">Teaching &amp; Workshops</a>
           </div>

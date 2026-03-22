@@ -42,11 +42,16 @@ export function ApplicationTemplate({ app }: Props) {
               </Link>
             </div>
           </div>
-          <PlaceholderImage
-            text={`${app.title} — sample image`}
-            aspectRatio="4/3"
-            bgColor={app.heroColor}
-          />
+          {/* If available, show the application-specific image; otherwise, show a placeholder */}
+          {app.imagesrc ? (
+            <img src={`/openuc2-next/images/applications/${app.imagesrc}`} alt={`${app.title} application example`} className="rounded-lg border border-uc2-border" />
+          ) : (
+            <PlaceholderImage
+              text={`${app.title} — sample image`}
+              aspectRatio="4/3"
+              bgColor={app.heroColor}
+            />
+          )}
         </div>
       </Section>
 

@@ -23,6 +23,7 @@ const addons = [
   {
     icon: <Zap className="w-5 h-5" />,
     title: "Electronics Add-On",
+    shopLink: "https://shop.openuc2.com/shop/kit-electronics-elt-25-02-discovery-electronics-add-on-1593",
     price: "EUR 549",
     description:
       "Adds ESP32 microcontroller, stepper motors, LED matrix, and USB camera. Transform your analog microscope into a computer-controlled imaging system. Requires: CoreBox.",
@@ -30,6 +31,7 @@ const addons = [
   {
     icon: <Infinity className="w-5 h-5" />,
     title: "Infinity Add-On",
+    shopLink: "https://shop.openuc2.com/shop/discovery-infinity-add-on-153",
     price: "EUR 749",
     description:
       "Upgrade to infinity-corrected optics with a tube lens and RMS objective. Camera-based digital imaging with proper Koehler illumination. Requires: CoreBox + Electronics.",
@@ -44,6 +46,7 @@ const addons = [
   {
     icon: <Disc3 className="w-5 h-5" />,
     title: "Fluorescence Laser Add-On",
+    shopLink: "https://shop.openuc2.com/shop/discovery-fluorescence-add-on-led-488nm-159",
     price: "EUR 1,199",
     description:
       "488 nm laser excitation for higher-intensity fluorescence imaging. Includes safety enclosure and alignment tools. Requires: CoreBox + Electronics + Infinity.",
@@ -52,6 +55,7 @@ const addons = [
     icon: <Ruler className="w-5 h-5" />,
     title: "Light-Sheet Add-On",
     price: "EUR 999",
+    shopLink: "https://shop.openuc2.com/shop/discovery-light-sheet-add-on-154",
     description:
       "Build an actual selective plane illumination microscope (SPIM) from cubes. Cylindrical lens, sample chamber, and orthogonal detection path. Requires: CoreBox + Electronics + Infinity.",
   },
@@ -142,7 +146,7 @@ export default function DiscoveryPage() {
         {/* CoreBox */}
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-            <PlaceholderImage text="CoreBox Kit" aspectRatio="16/10" bgColor="bg-uc2-green/10" />
+            <img src="/openuc2-next/images/discovery.png" alt="CoreBox Kit" className="rounded-lg border border-uc2-border" />
             <div>
               <h3 className="text-2xl font-bold mb-1">
                 CoreBox{" "}
@@ -173,7 +177,7 @@ export default function DiscoveryPage() {
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="md:order-2">
-              <PlaceholderImage text="QBox Quantum Optics Kit" aspectRatio="16/10" bgColor="bg-uc2-blue/10" />
+              <img src="/openuc2-next/images/qbox.png" alt="QBox Quantum Optics Kit" className="rounded-lg border border-uc2-border" />
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-1">
@@ -222,7 +226,7 @@ export default function DiscoveryPage() {
                 <p className="text-sm text-uc2-muted leading-relaxed mb-4 flex-1">{addon.description}</p>
                 {addon.price && (
                   <a
-                    href="https://shop.openuc2.com/"
+                    href={addon.shopLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block text-center px-4 py-2 bg-uc2-green text-white text-sm font-semibold rounded-lg hover:brightness-110 transition-all"

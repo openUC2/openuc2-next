@@ -10,6 +10,7 @@ export interface ApplicationData {
   specs: [string, string][];
   features: { title: string; description: string }[];
   roadmapItems: string[];
+  imagesrc?: string; // Optional image source for the hero image
 }
 
 export const applicationData: ApplicationData[] = [
@@ -21,6 +22,7 @@ export const applicationData: ApplicationData[] = [
       "openUC2 enables affordable, modular fluorescence microscopy. Use LED or laser excitation sources, user-swappable dichroic mirror cubes, and emission filters — all in the standardized UC2 cube format. Capture multi-channel images with GFP, DAPI, RFP, and custom filter sets. The FRAME microscope supports automated multi-tile fluorescence scanning with stitching.",
     category: "Imaging Modalities",
     heroColor: "bg-emerald-950/50",
+    imagesrc: "/immunostaining.jpg", 
     specs: [
       ["Excitation sources", "LED (405/470/530/590/630 nm) or diode laser"],
       ["Filter cubes", "Modular UC2 cubes, user-swappable"],
@@ -49,6 +51,7 @@ export const applicationData: ApplicationData[] = [
       "Go beyond intensity-based fluorescence with FLIM (Fluorescence Lifetime Imaging Microscopy) on the openUC2 platform. Measure fluorophore lifetimes to distinguish molecular environments, detect FRET, and separate overlapping emission spectra. The modular architecture lets you add pulsed laser excitation and time-correlated detection to any existing UC2 setup.",
     category: "Imaging Modalities",
     heroColor: "bg-violet-950/50",
+    imagesrc: "/flim.jpeg", 
     specs: [
       ["Excitation", "Pulsed laser diode (405/470/640 nm)"],
       ["Detection", "SPAD or hybrid PMT module (UC2 cube)"],
@@ -74,9 +77,10 @@ export const applicationData: ApplicationData[] = [
     title: "Histology & Slide Scanning",
     subtitle: "Automated whole-slide scanning with stitching",
     description:
-      "Turn your openUC2 FRAME into a digital pathology slide scanner. Automated XYZ stage movement captures overlapping tiles across the full 130x90 mm travel range, then stitches them into a seamless whole-slide image. Process H&E, IHC, or special stains at 10x-40x magnification with consistent Koehler illumination.",
+      "Turn your openUC2 FRAME into a digital pathology slide scanner. Automated XYZ stage movement captures overlapping tiles across the full 130x90 mm travel range, then stitches them into a seamless whole-slide image. Process H&E, IHC, or special stains at 10x-40x magnification with consistent Koehler illumination. Postprocessing will be available soon. Raw Images e.g. as OME.TIF or OME.Zarr or simply individual Tif images can be exported immediately. ",
     category: "Life Science Workflows",
     heroColor: "bg-amber-950/50",
+    imagesrc: "/histo.jpeg",
     specs: [
       ["Scan area", "Up to 130 x 90 mm (full stage travel)"],
       ["Resolution", "10x to 40x objectives"],
@@ -105,6 +109,7 @@ export const applicationData: ApplicationData[] = [
       "Monitor living cells over hours or days with openUC2. The compact form factor allows placement inside standard CO2 incubators. ESP32-based WiFi control means no cables through the incubator door. Automated focus maintenance and multi-position acquisition enable unattended experiments.",
     category: "Life Science Workflows",
     heroColor: "bg-sky-950/50",
+    imagesrc: "/livecell.gif",
     specs: [
       ["Environment", "CO2 incubator compatible (fits inside standard incubator)"],
       ["Control", "WiFi (ESP32), no cable feedthrough required"],
@@ -161,6 +166,7 @@ export const applicationData: ApplicationData[] = [
       "Use FRAME as an affordable high-content screening platform. Automated XYZ stage scans standard 96-well or 384-well microplates, capturing brightfield or fluorescence images at each well. ImSwitch scripting enables custom acquisition patterns, multi-channel imaging, and on-the-fly analysis.",
     category: "Life Science Workflows",
     heroColor: "bg-indigo-950/50",
+    imagesrc: "/multiwell.jpg",
     specs: [
       ["Plate formats", "96-well, 384-well (adapter-dependent)"],
       ["Imaging modes", "Brightfield, fluorescence (multi-channel)"],
@@ -189,6 +195,7 @@ export const applicationData: ApplicationData[] = [
       "Perform DNA-FISH experiments on the openUC2 platform. Multi-channel fluorescence imaging with automated tile scanning enables detection of specific genomic loci, chromosomal aberrations, and gene copy number variations. The open software stack integrates with existing FISH analysis tools.",
     category: "Life Science Workflows",
     heroColor: "bg-pink-950/50",
+    imagesrc: "/dnafish.png",
     specs: [
       ["Excitation", "Multi-channel LED (405/470/530/590/630 nm)"],
       ["Detection", "Up to 5 fluorescence channels"],
@@ -217,6 +224,7 @@ export const applicationData: ApplicationData[] = [
       "Control openUC2 microscopes from anywhere via web browser. Docker-based deployment, REST API, and WiFi connectivity make FRAME ideal for remote operation — including BSL-3 and BSL-4 containment labs where physical access is restricted. No cable feedthroughs required.",
     category: "Specialist Applications",
     heroColor: "bg-red-950/50",
+    imagesrc: "/remote.gif",
     specs: [
       ["Remote access", "Web browser (any device), REST API, Python SDK"],
       ["Deployment", "Docker container on Jetson/RPi"],
@@ -238,59 +246,32 @@ export const applicationData: ApplicationData[] = [
     ],
   },
   {
-    slug: "raman",
-    title: "Raman Upgrade Path",
-    subtitle: "Add Raman spectroscopy to your UC2 microscope",
+    slug: "labautomation",
+    title: "Lab Automation & Robotics",
+    subtitle: "Integrate with liquid handlers, robotic arms, and LIMS",
     description:
-      "The UC2 cube architecture provides a natural upgrade path to Raman microscopy. Add a laser excitation cube, a notch filter cube, and couple the Raman signal to a spectrometer. The modular design lets you combine Raman with brightfield, fluorescence, or phase contrast imaging in the same setup.",
+      "Integrate openUC2 microscopes into automated lab workflows. REST API and SiLA2 compatibility enable control from liquid handling robots, robotic arms, and LIMS software. Use the microscope as an on-deck imaging station for real-time QC during sample prep, or as a remote-controlled instrument in fully automated workflows.",
     category: "Specialist Applications",
+    imagesrc: "/labautomation.png",
     heroColor: "bg-orange-950/50",
     specs: [
-      ["Excitation laser", "532 nm or 785 nm (cube-mounted)"],
-      ["Spectral range", "200-3500 cm-1 (spectrometer-dependent)"],
-      ["Spatial resolution", "Diffraction-limited (~1 um at 532 nm)"],
-      ["Integration", "Fiber-coupled to external spectrometer"],
-      ["Mapping", "XY stage scanning for Raman maps"],
-      ["Combined modes", "Raman + brightfield/fluorescence"],
+      ["Integration interfaces", "REST API, SiLA2, Python SDK"],
+      ["Robotic compatibility", "Liquid handlers (Tecan, Hamilton), robotic arms (UR, KUKA)"],
+      ["LIMS integration", "Custom API scripts for UniteLabs, Arkitekt, etc."],
+      ["On-deck operation", "Compact footprint fits on liquid handler decks"],
+      ["Real-time feedback", "Use microscope data for conditional workflow branching"],
+      ["Automation software", "Compatible with Python-based automation frameworks (e.g. PyRobot)"],
     ],
     features: [
-      { title: "Modular Raman cube", description: "Laser and notch filter in standard UC2 cubes — add to any existing setup." },
-      { title: "Fiber-coupled output", description: "Couple Raman signal to any compatible spectrometer via optical fiber." },
-      { title: "Correlated imaging", description: "Combine Raman maps with brightfield, fluorescence, or phase contrast images." },
-      { title: "Automated mapping", description: "Use FRAME's motorized stage for automated Raman XY mapping." },
+      { title: "API-driven control", description: "Full microscope control via REST API and Python SDK — ideal for integration into automated workflows." },
+      { title: "Robotic compatibility", description: "Integrate with popular liquid handlers and robotic arms for sample handling and imaging." },
+      { title: "On-deck imaging", description: "Compact design allows placement on liquid handler decks for real-time QC during sample prep." },
+      { title: "LIMS integration", description: "Custom scripts enable integration with LIMS software for automated data logging and workflow management." },
     ],
     roadmapItems: [
-      "Integrated Raman acquisition in ImSwitch",
-      "SERS (surface-enhanced Raman) sample holder",
-      "Raman spectral database and auto-identification",
-    ],
-  },
-  {
-    slug: "space",
-    title: "Space-Borne Optical Engine",
-    subtitle: "UC2 cube architecture adapted for space payloads",
-    description:
-      "The standardized UC2 cube interface and modular assembly principles are being adapted for space-borne optical instruments. A collaboration between openUC2 and space research partners is developing a CubeSat-compatible optical engine based on UC2 cube modules — bringing modular, reconfigurable optics to space applications.",
-    category: "Specialist Applications",
-    heroColor: "bg-slate-900/50",
-    specs: [
-      ["Form factor", "CubeSat-compatible (1U to 3U)"],
-      ["Optics", "Custom space-rated UC2 cube modules"],
-      ["Materials", "Aluminum and titanium cube frames (space-grade)"],
-      ["Thermal range", "-40C to +85C"],
-      ["Status", "Technology demonstrator phase"],
-      ["Partners", "University of Jena, ESA-affiliated programs"],
-    ],
-    features: [
-      { title: "Modular space optics", description: "Reconfigurable optical column based on UC2 cube architecture, adapted for space." },
-      { title: "CubeSat compatible", description: "Designed to fit standard CubeSat form factors (1U to 3U)." },
-      { title: "Space-grade materials", description: "Aluminum and titanium cube frames rated for the thermal and mechanical environment of LEO." },
-      { title: "Heritage from ground systems", description: "Optical designs and control software proven on ground-based UC2 systems." },
-    ],
-    roadmapItems: [
-      "Vibration and thermal qualification testing",
-      "First in-orbit demonstration",
-      "Modular payload interface standard",
+      "Pre-built integration modules for popular liquid handlers",
+      "Automated sample loading/unloading protocols",
+      "Real-time image-based workflow branching",
     ],
   },
   {

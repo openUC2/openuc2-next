@@ -25,8 +25,7 @@ const applications = [
   ]},
   { label: "Specialist Applications", items: [
     { name: "Remote & BSL Microscopy", href: "/applications/remotebsl" },
-    { name: "Raman Upgrade Path", href: "/applications/raman" },
-    { name: "Space-Borne Optical Engine", href: "/applications/space" },
+    { name: "Lab Automation", href: "/applications/labautomation" },
   ]},
   { label: "Learning & Community", items: [
     { name: "Teaching & Workshops", href: "/applications/education" },
@@ -67,14 +66,14 @@ export function Header() {
                 <div className="w-72 bg-white border border-uc2-border rounded-lg shadow-xl p-3">
                   {products.map((group) => (
                     <div key={group.label}>
-                      <div className="text-[11px] uppercase tracking-wider text-uc2-gray px-3 pt-2 pb-1">
+                      <div className="text-[11px] uppercase tracking-wider text-uc2-blue px-3 pt-2 pb-1">
                         {group.label}
                       </div>
                       {group.items.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="block px-3 py-2 text-sm text-uc2-text hover:text-uc2-blue hover:bg-uc2-light rounded-md transition-colors"
+                          className="block px-3 py-2 text-sm text-uc2-text hover:text-uc2-grey hover:bg-uc2-light rounded-md transition-colors"
                         >
                           {item.name}
                         </Link>

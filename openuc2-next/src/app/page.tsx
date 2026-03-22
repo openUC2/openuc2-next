@@ -120,7 +120,7 @@ export default function HomePage() {
             src="/openuc2-next/lottie/UC2_spiral.json"
             alt="UC2 Spiral Build-Up Animation"
             className="rounded-lg border border-uc2-border overflow-hidden"
-            preLoad={0.3}
+            preLoad={0.1}
           />
           <ScrollReveal delay={150}>
             <h3 className="text-xl font-semibold mb-4">From optical principle to working instrument</h3>
@@ -215,8 +215,7 @@ export default function HomePage() {
         {/* Discovery */}
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-            <PlaceholderImage text="Discovery CoreBox — green case with cubes, lenses, mirrors" aspectRatio="16/10" bgColor="bg-uc2-green/10" />
-            <img src="/images/corebox.webp" alt="Discovery Lineup: CoreBox, Electronics Kit, Infinity Upgrade, QBox" className="rounded-lg border border-uc2-border" />
+            <img src="/openuc2-next/images/course3.JPG" alt="Discovery Lineup: CoreBox, Electronics Kit, Infinity Upgrade, QBox" className="rounded-lg border border-uc2-border" />
             <div>
               <Tag variant="edu">Education</Tag>
               <h3 className="text-2xl font-bold mt-3 mb-3">Discovery Line</h3>              <p className="text-uc2-muted mb-3">
@@ -246,7 +245,7 @@ export default function HomePage() {
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
             <div className="md:order-2">
-              <PlaceholderImage text="Configurator tool with drag-and-drop cubes on a grid" aspectRatio="16/10" bgColor="bg-uc2-accent/10" />
+              <img src="/openuc2-next/images/openplpatform.jpg" alt="Makers and researchers prototyping with the open platform" className="rounded-lg border border-uc2-border" />
             </div>
             <div>
               <Tag variant="maker">Makers & Research</Tag>
@@ -280,7 +279,7 @@ export default function HomePage() {
         {/* FRAME */}
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <img src="/openuc2-next/images/frame2.png" alt="FRAME microscope with motorized stage and fluorescence cubes" className="rounded-lg border border-uc2-border" />
+            <img src="/openuc2-next/images/frame.jpg" alt="FRAME microscope with motorized stage and fluorescence cubes" className="rounded-lg border border-uc2-border" />
             <div>
               <Tag variant="pro">Professional</Tag>
               <h3 className="text-2xl font-bold mt-3 mb-3">FRAME — Automated Microscope</h3>

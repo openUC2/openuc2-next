@@ -3,7 +3,7 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
-const GA_ID = "G-XXXXXXXXXX"; // Replace with real GA4 ID
+const GA_ID = "G-TMP2J62W3Q"; // Replace with real GA4 ID
 const HOTJAR_ID = "0000000"; // Replace with real Hotjar ID
 
 export function AnalyticsProvider() {

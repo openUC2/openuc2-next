@@ -14,32 +14,32 @@ export const metadata: Metadata = {
 
 const metrics = [
   { value: "130x90 mm", label: "XY Travel Range" },
-  { value: "<1 um", label: "Positioning Precision" },
+  { value: "<5 um", label: "Positioning Precision" },
   { value: "11 mm", label: "Z Travel" },
-  { value: "5+", label: "Imaging Modes" },
-  { value: "100%", label: "Open Source" },
+  { value: "5+", label: "Imaging Modes \n Fluorescence, Phasecontrast, Brightfield, STORM, ..." },
+  { value: "99%", label: "Open Source (we are working on the docs!)" },
 ];
 
 const specsLeft: [string, string][] = [
   ["XY Travel Range", "130 x 90 mm"],
   ["Z Travel Range", "11 mm"],
-  ["Positioning Precision", "< 1 um (closed-loop)"],
+  ["Positioning Precision", "< 1-5 um (closed-loop possible)"],
   ["Stage Speed", "Up to 10 mm/s"],
   ["Objectives", "Any RMS/M25-thread infinity-corrected (4x-100x)"],
-  ["Illumination (Epi)", "Multi-channel LED (405/470/530/590/630 nm) or Laser"],
+  ["Illumination (Epi)", "Multi-channel LED (405/450/588/532/575/635 nm) or Laser (ask for custom wavelengths and combinations)"],
   ["Illumination (Trans)", "White LED matrix, DPC-capable"],
   ["Filter Cubes", "Modular UC2 cubes, user-swappable"],
   ["Camera", "USB3 (Allied Vision, Basler, Daheng) or CSI"],
 ];
 
 const specsRight: [string, string][] = [
-  ["Compute", "Nvidia Jetson Nano / Orin or Raspberry Pi"],
-  ["Software", "ImSwitch (open source, Python)"],
-  ["Control Interfaces", "Web browser, REST API, Python SDK, game controller"],
+  ["Compute", "Raspberry Pi 5 (with YouYeeToo X1 in the development"],
+  ["Software", "ImSwitch using Raspberry Pi OS (open source, Python, https://github.com/openUC2/rpi-imswitch-os)"],
+  ["Control Interfaces", "Web browser, REST API, Python SDK, PS4 controller, CAN Bus"],
   ["Communication", "CAN Bus, WiFi, USB-Serial"],
-  ["Firmware", "UC2-REST (ESP32, open source)"],
+  ["Firmware", "UC2-REST (ESP32, open source, https://github.com/youseetoo/uc2-esp32)"],
   ["Imaging Modes", "Brightfield, Fluorescence, Phase Contrast, DPC, FLIM*, dSTORM*"],
-  ["Footprint", "~300 x 300 x 350 mm (configurable)"],
+  ["Footprint", "~300 x 300 x 350 mm (depending on configuration)"],
   ["Sample Holders", "Slides, well plates, custom fixtures"],
   ["Certifications", "CE (available on request)"],
 ];
@@ -49,25 +49,25 @@ const features = [
     icon: <RefreshCw className="w-5 h-5" />,
     title: "Swap modules in seconds",
     description:
-      "Brightfield today, fluorescence tomorrow. Change your dichroic cube, add a laser module, or insert a phase ring — no tools, no realignment.",
+      "Brightfield today, fluorescence tomorrow. Change your dichroic, add a laser, or insert a phase ring — no tools, no realignment. All with our  cubes.",
   },
   {
     icon: <Target className="w-5 h-5" />,
     title: "Standard objectives",
     description:
-      "Use any RMS or M25-thread infinity-corrected objective. Nikon, Olympus, Zeiss — your existing optics work with FRAME.",
+      "Use our selection of high-quality objective lenses or any RMS or M25-thread infinity-corrected objective. Your existing optics work with the FRAME.",
   },
   {
     icon: <Camera className="w-5 h-5" />,
     title: "Your choice of camera",
     description:
-      "Support for USB3 (e.g. Allied Vision, Basler, Daheng) and CSI cameras. Use what your lab already owns.",
+      "Support for USB3 (e.g. HIK Vision, Daheng), CSI (Raspberry Pi), but also for scientific cameras (e.g. Andor, Tucsen), all implemented in ImSwitch.",
   },
   {
     icon: <Globe className="w-5 h-5" />,
     title: "Browser-based control",
     description:
-      "Full microscope control from any device on your network. ImSwitch GUI, Jupyter Notebooks, or raw REST API calls — your choice.",
+      "Full microscope control from any device on your network. ImSwitch GUI, Jupyter Notebooks, Arkitekt and SiLa2, or raw REST API calls — your choice.",
   },
   {
     icon: <Bot className="w-5 h-5" />,
@@ -84,7 +84,7 @@ const features = [
 ];
 
 const sampleImages = [
-  { title: "Fluorescence — AF488 FluoCells", desc: "Multi-tile automated scan with stitching", meta: "FRAME | 20x | 488 nm LED", bg: "bg-emerald-950", imgSrc: "/openuc2-next/images/frame_fluo.png" },
+  { title: "Fluorescence — AF488 FluoCells", desc: "Multi-tile automated scan with stitching", meta: "FRAME | 20x | 488 nm LED", bg: "bg-emerald-950", imgSrc: "/openuc2-next/images/frame_fluo.jpg" },
   { title: "Histology — H&E Tissue Section", desc: "Automated slide scanning, 130x90 mm coverage", meta: "FRAME | 10x | Brightfield", bg: "bg-amber-950", imgSrc: "/openuc2-next/images/frame_histo.png" },
   { title: "Phase Contrast — Live Cells", desc: "DPC and quantitative phase imaging", meta: "FRAME | 40x | Phase Contrast", bg: "bg-slate-800", imgSrc: "/openuc2-next/images/frame_phasecontrast.png" },
   { title: "Super-Resolution — dSTORM", desc: "Single-molecule localization microscopy", meta: "FRAME | 60x | 638 nm Laser", bg: "bg-purple-950", imgSrc: "/openuc2-next/images/frame_storm.png" },
@@ -295,7 +295,7 @@ export default function FramePage() {
             being locked into proprietary software.&rdquo;
           </blockquote>
           <cite className="text-sm text-uc2-muted not-italic">
-            — Placeholder name, Placeholder institution
+            — Franzi, Helsinki University
           </cite>
         </div>
       </Section>
