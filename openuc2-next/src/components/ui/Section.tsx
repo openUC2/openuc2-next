@@ -73,7 +73,7 @@ export function SpecsTable({ rows }: SpecsTableProps) {
       <tbody>
         {rows.map(([label, value], i) => (
           <tr key={i} className="border-b border-uc2-border">
-            <th className="text-left py-3 pr-4 text-white font-medium w-2/5">{label}</th>
+            <th className="text-left py-3 pr-4 text-uc2-muted font-medium w-2/5">{label}</th>
             <td className="py-3 text-uc2-text">{value}</td>
           </tr>
         ))}

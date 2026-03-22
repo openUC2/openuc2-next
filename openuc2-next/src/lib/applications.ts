@@ -256,11 +256,10 @@ export const applicationData: ApplicationData[] = [
     heroColor: "bg-orange-950/50",
     specs: [
       ["Integration interfaces", "REST API, SiLA2, Python SDK"],
-      ["Robotic compatibility", "Liquid handlers (Tecan, Hamilton), robotic arms (UR, KUKA)"],
+      ["Robotic compatibility", "Liquid handlers (Opentrons, potentially others), robotic arms (fairino, potentially others)"],
       ["LIMS integration", "Custom API scripts for UniteLabs, Arkitekt, etc."],
       ["On-deck operation", "Compact footprint fits on liquid handler decks"],
       ["Real-time feedback", "Use microscope data for conditional workflow branching"],
-      ["Automation software", "Compatible with Python-based automation frameworks (e.g. PyRobot)"],
     ],
     features: [
       { title: "API-driven control", description: "Full microscope control via REST API and Python SDK — ideal for integration into automated workflows." },

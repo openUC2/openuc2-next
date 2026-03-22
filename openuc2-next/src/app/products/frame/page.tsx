@@ -138,7 +138,7 @@ export default function FramePage() {
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-8 text-center">
             {metrics.map((m) => (
               <div key={m.label}>
-                <div className="text-2xl md:text-3xl font-extrabold text-uc2-blue">{m.value}</div>
+                <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">{m.value}</div>
                 <div className="text-xs text-uc2-muted mt-1">{m.label}</div>
               </div>
             ))}

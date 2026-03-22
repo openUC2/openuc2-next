@@ -1,0 +1,31 @@
+---
+title: "How You Can Use openUC2's FRAME in Agricultural Studies"
+date: "2025-08-08"
+excerpt: "Turning microscopy on its side — literally. Our newest plant-science rig rotates the FRAME 90° for long-term seedling studies with ROPOD chambers, fluorescence, and AI-assisted pest detection."
+author: "Dr. Benedict Diederich"
+coverColor: "#27ae60"
+---
+
+## Turning Microscopy on Its Side — Literally
+
+At OpenUC2 we love testing the limits of modular microscopy. Our newest plant-science rig, inspired by the developments with the Wageningen University in the Netherlands, does exactly that: the entire frame can be rotated 90° onto its back. Seedlings stay in their natural, upright orientation, while objective and camera glide horizontally — perfect for long-term growth studies that would otherwise suffer from gravity-induced artifacts.
+
+## ROPOD Chambers Meet UC2 Stages
+
+To house delicate seedlings we adopted the open-source ROPOD system ([Nature Scientific Reports](https://www.nature.com/articles/s41598-024-63226-1)). Each transparent chamber provides a humid, sterile micro-environment with optical-grade windows. Two chambers snap straight into our magnetic UC2 stage, so you can compare genotypes or treatments side-by-side. A motorized z-drive sweeps through focal planes; our controller triggers time-lapse sequences from minutes to weeks, stitching full 3D stacks into a single file.
+
+## Multi-Modal Imaging
+
+- **Fluorescence:** GFP, RFP — standard filter cubes drop in with zero alignment fuss.
+- **Light-sheet:** Swap the tube lens for our cylindrical module and illuminate roots with a 2-µm-thin sheet for fast, gentle 3D imaging. (e.g. with the [HoliSHEET](https://github.com/beniroquai/HoLiSheet))
+- **Bright-field & DIC:** Classic modalities are one click away — no additional optics required.
+
+## AI-Assisted Pest Detection
+
+Together with Wageningen's Nematode Lab (José Lozano's lab, [WUR](https://www.wur.nl/en/persons/jose-lozano-torres-1.htm)) we aimed to apply smart microscopy where the microscope automatically tracks the roots and a network flags nematodes as they penetrate the root. Stem cross-sections are streamed to a Raspberry Pi 5 mounted under the stage; inference runs in real-time, marking each parasite with a heat-map overlay. In the future researchers receive instant alerts plus CSV exports for quantitative analysis.
+
+## Hardware Simplicity, Open-Source Flexibility
+
+Any commercial microscope can collect nice pictures — ours lets you reconfigure the frame itself. The only extra part is a 3D-printed cradle that locks the cube stack in the horizontal position so nothing tips.
+
+Whether you study phototropism, root microbiomes, or plant-pathogen interactions, this side-mounted microscope opens a fresh angle — literally — on dynamic processes. Drop us a line at [hello@openuc2.com](mailto:hello@openuc2.com) or hop onto Slack; we're eager to hear what you'll flip sideways next.

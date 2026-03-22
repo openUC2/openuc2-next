@@ -1,0 +1,29 @@
+---
+title: "I Want It Now! Many! — A Multi-Well Plate Microscope"
+date: "2025-03-01"
+excerpt: "A research group needed to image multiple well plates in a fully automated workflow. Within minutes, we had a modular multi-array microscope built from OpenUC2 cubes."
+author: "Dr. Benedict Diederich"
+coverColor: "#e67e22"
+---
+
+A few days ago, a research group approached us for assistance with a rather specific application: imaging a series of well plates in a fully automated workflow. The goal was to inspect multiple wells per plate efficiently and reliably. After a brief phone call, it quickly became clear that this task could be easily tackled using our modular OpenUC2 system.
+
+It takes less than 10 minutes to build the device and is ready to use instantly. It's derived from the optics of our [openUC2 10x Seeed Studio microscope](https://www.seeedstudio.com/XIAO-Microscope-p-5971.html).
+
+## The Setup
+
+The solution involved stacking two layers of 2×3 cubes on top of each other, forming individual imaging columns. Each column consists of an objective lens and a camera. The well plate, positioned at the top, is moved along the optical axis using a Z-stage to bring different focal planes into view. This movement can be adjusted manually via a knob or automated using an electrically controlled unit powered by our UC2-ESP32 firmware (see [https://youseetoo.github.io/](https://youseetoo.github.io/)).
+
+![TEST](../images/blog/multiwell/Bildschirmaufnahme-2025-02-26-um-15.53.51.gif)
+
+## Scalability
+
+One of the key strengths of the OpenUC2 system is its rapid prototyping capability and scalability. Multiple microscope units can be assembled with a 50 mm spacing between them, which aligns perfectly with a standard 6-well plate format. Illumination can be achieved using either a darkfield setup or a transmitted light LED positioned above the sample.
+
+All components are seamlessly controlled via our OpenUC2 software, making the setup intuitive and adaptable to various laboratory workflows. If you have similar ideas on how to improve your lab automation processes, feel free to reach out to us. We are always eager to help and explore new possibilities.
+
+A random wellplate with (mostly) dust and perhaps some very much dried out cells under varying illumination and refocusing scenarios. This is simply to demonstrate how it can work in principle.
+
+## The Vision
+
+With each new application like this, we take another step towards realizing our vision of making OpenUC2 the "Raspberry Pi of optics" — bringing modular, open-source, and scalable imaging solutions to the scientific community.

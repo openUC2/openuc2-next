@@ -1,0 +1,35 @@
+---
+title: "openUC2 x Autodesk Technology Impact"
+date: "2025-11-11"
+excerpt: "Why CAD is the quiet engine behind OpenUC2 — from parametric cube design in Inventor to the vision of linking our online configurator with a full digital twin backend."
+author: "Dr. Benedict Diederich"
+coverColor: "#2c3e50"
+---
+
+## Why CAD Is the Quiet Engine Behind OpenUC2
+
+When people see our microscopes or hold one of our cubes for the first time, they often focus on the optics, the sensors, the flashes of laser light. I get it — that's the visible part. But the real story starts much earlier, with a sketch that lives inside a CAD model. For OpenUC2, CAD isn't a tool we open to finish a design; it's the place where the system is born, grows, breaks, and learns to put itself back together in a way that others can reproduce.
+
+We're recipients of Autodesk software through Autodesk's Technology Impact Program, and that support matters. It lets a small team like ours rely on Inventor, Fusion 360, and Inventor CAM as everyday instruments, not rare resources — for free! Our mission is simple: make optics accessible, available, and affordable worldwide (3A). We ship open hardware to classrooms and research labs; people replicate, adapt, and repair it on their own terms. Doing that at scale requires models that carry tolerances, threads, interference checks, drawings, CAM toolpaths — not just geometry that looks good on a screen. And we need a system! Modular systems are probably one of the hardest products to build and sell — once decided, never leave the path again.
+
+## Parametric Thinking
+
+I learned Inventor during my studies at the TH Köln. It was my first proper taste of parametric thinking: change a single dimension in a master sketch and watch a family of parts shift into alignment. And yes, dependency mismatches are a thing! Our cube ecosystem is driven from a central sketch, which sounds easy until a customer asks for a variant — five millimeters more travel here, a different magnet seat there — and we can produce a coherent, versioned assembly without reopening a hundred files.
+
+We've experimented with FreeCAD and OpenSCAD along the way. Scriptable designs are powerful, and we surely stand for open-source, too. For what we need right now — large assemblies, robust constraints, and integrated CAM — Inventor hits the balance. Fusion 360 remains our sketchbook for quick ideas and collaborative work. Over time, our repositories on GitHub grew into a mechanical library, with iProperties and bill of materials flowing into release packages. We've reached the point where manual wrangling becomes the bottleneck, so we're folding Vault into the process to keep data and lifecycles tidy as the library expands.
+
+## People Behind the Parts
+
+There's also a story about people. About a year ago Jens joined and quietly rebuilt the cube system from the ground up. What used to be a scattering of IPTs (a thousand or so?) became a disciplined, master-sketch-driven architecture. Parameters now propagate from one place; families of parts behave like families rather than distant cousins. I have a personal connection here. Back in Cologne, during my studies, I ran into a tiny startup at a party that was building mechanically steered wind turbines. Ten years later, in an "interview," we realized Jens had engineered those turbines. The same care that goes into a gearbox or a pitch linkage now shows up in master inserts, puzzle pieces and boxes. Christine closes the loop with production. When a release drops, she translates CAD into trays, checks, labels, and inventory so the thing that made sense to us on the monitor makes sense to someone else on a workbench. That's where CAD stops being theory and becomes logistics. Armin handles everything for large scale production and warehouse — have a look at our blog post about WerkVol at Volmarstein.
+
+## Configurator Meets CAD
+
+The part I'm most excited to push next is the link between our online optics configurator and the CAD backend. Imagine arranging a microscope in the browser: tube lens, camera, dichroic, illumination — and exporting a clean, machine-readable description. Inventor interprets that description, instantiates a parametric assembly, generates the right drawings and CAM, and we ship not only a kit but a digital twin. Now firmware limits, stage ranges, autofocus strategies, and illumination profiles are all grounded in the exact geometry that sits on the table. When the physical setup changes, the model updates, and the software knows. That's how an open system remains coherent while many hands shape it. All funded by the Thüringer Aufbaubank inside the FTI Richtlinie.
+
+## Why CAD Matters for Open Hardware
+
+People sometimes ask why we put so much effort into CAD when we could "just 3D-print parts." For us, it's about repeatability and being able to share designs across continents. Clear tolerances, threads, and datums mean a mount printed in Jena matches one milled in Santiago. That consistency saves time and money on shipping because teams can build locally from the same drawings instead of waiting for parcels. It also keeps repair simple: if a holder breaks, the drawing is enough to make a replacement without asking us for files or guidance. The community side matters too — groups like the team in Chile show how shared models travel and improve in the open, from their light-sheet microscope work to refinements like these filter cubes (see [wenzel-lab/light-sheet-microscope](https://github.com/wenzel-lab/light-sheet-microscope) and the "Optical filter cubes — OpenUC2 (improved)" model on [Printables](https://www.printables.com/model/514706-optical-filter-cubes-openuc2-improved?lang=de)).
+
+We're still very much a startup. We're finding the balance between mission and market, and we're honest that generosity alone doesn't pay rent. The Autodesk Technology Impact Program helps us keep the fundamentals strong while we focus on building a sustainable path: products that teach optics to the curious, serve researchers who need reliable tools, and leave room for others to stand on our shoulders. Over the next three years, having access to the full Inventor toolset — worth €30,000 — lets us double down on the infrastructure that makes open hardware reproducible at scale.
+
+This is how we try to make optics a little more FAIR: by treating the CAD model as a public memory of what works, what fits, and what can be improved — so the next person doesn't start from scratch but from a platform strong enough to carry their ideas further.
