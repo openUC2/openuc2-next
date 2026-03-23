@@ -3,6 +3,8 @@ name: Build and Deploy
 on:
   push:
     branches: [main]
+  # on button click in Actions tab
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
