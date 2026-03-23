@@ -10,14 +10,14 @@ import { CubeScrollAnimation } from "@/components/home/CubeScrollAnimation";
 
 const personas = [
   {
-    icon: <GraduationCap className="w-8 h-8" />,
-    tag: "Education" as const,
-    tagVariant: "edu" as const,
-    title: "I want to teach optics",
+    icon: <Microscope className="w-8 h-8" />,
+    tag: "Professional & Industry" as const,
+    tagVariant: "pro" as const,
+    title: "I need to prototype fast",
     description:
-      "Hands-on kits for classrooms, universities, and workshops. Students build real microscopes from modular cubes and understand optics by doing.",
-    cta: "Explore Discovery Line",
-    href: "/products/discovery",
+      "FRAME: a fully motorized, modular microscope platform. Configure online, validate with ray tracing, swap imaging modes in seconds. From concept to data in days.",
+    cta: "Explore FRAME",
+    href: "/products/frame",
   },
   {
     icon: <Wrench className="w-8 h-8" />,
@@ -30,14 +30,14 @@ const personas = [
     href: "/products/makers",
   },
   {
-    icon: <Microscope className="w-8 h-8" />,
-    tag: "Professional" as const,
-    tagVariant: "pro" as const,
-    title: "I need an automated microscope",
+    icon: <GraduationCap className="w-8 h-8" />,
+    tag: "Education" as const,
+    tagVariant: "edu" as const,
+    title: "I want to teach optics",
     description:
-      "FRAME: a fully motorized, modular microscope with XYZ scanning, multi-channel fluorescence, and open-source software. Ready for your lab.",
-    cta: "Explore FRAME",
-    href: "/products/frame",
+      "Hands-on kits for classrooms, universities, and workshops. Students build real microscopes from modular cubes and understand optics by doing.",
+    cta: "Explore Discovery Line",
+    href: "/products/discovery",
   },
 ];
 
@@ -96,12 +96,34 @@ export default function HomePage() {
       <div className="bg-uc2-light border-b border-uc2-border">
         <div className="max-w-[1140px] mx-auto px-6">
           <p className="text-center text-[11px] uppercase tracking-[0.18em] text-uc2-gray font-semibold pt-6">
-            Partners
+            Trusted by
           </p>
           <LogoStrip logos={logos} />
         </div>
       </div>
-
+      {/* ===== SPEED METRIC BAR ===== */}
+      <div className="bg-white border-b border-uc2-border py-10">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Minutes</div>
+              <div className="text-sm text-uc2-muted mt-1">to configure</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Seconds</div>
+              <div className="text-sm text-uc2-muted mt-1">to simulate</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Hours</div>
+              <div className="text-sm text-uc2-muted mt-1">to prototype</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Weeks</div>
+              <div className="text-sm text-uc2-muted mt-1">to production</div>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* ===== HOW IT WORKS — THE CUBE ===== */}
       <Section alt id="how-it-works">
         <ScrollReveal>
@@ -180,6 +202,10 @@ export default function HomePage() {
               prototyping as fast as rearranging blocks. Change your dichroic? Swap one cube. Add a
               second camera? Add one cube. Move from brightfield to phase contrast? Rearrange the grid.
             </p>
+            <p className="text-uc2-muted mb-6">
+              Every cube-based prototype has a digital twin. Validate optically with ray tracing
+              before building. Scale to CNC-machined production parts without redesign.
+            </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/applications/fluorescence"
@@ -212,30 +238,31 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
 
-        {/* Discovery */}
+        {/* FRAME */}
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-            <img src="/openuc2-next/images/course3.JPG" alt="Discovery Lineup: CoreBox, Electronics Kit, Infinity Upgrade, QBox" className="rounded-lg border border-uc2-border" />
+            <img src="/openuc2-next/images/frame.jpg" alt="FRAME microscope with motorized stage and fluorescence cubes" className="rounded-lg border border-uc2-border" />
             <div>
-              <Tag variant="edu">Education</Tag>
-              <h3 className="text-2xl font-bold mt-3 mb-3">Discovery Line</h3>              <p className="text-uc2-muted mb-3">
-                Modular educational kits for teaching optics, microscopy, and imaging. Start with the
-                CoreBox (analog optics), add electronics, upgrade to infinity-corrected systems, or
-                explore quantum optics with the QBox.
+              <Tag variant="pro">Professional &amp; Industry</Tag>
+              <h3 className="text-2xl font-bold mt-3 mb-3">FRAME — Automated Microscope</h3>
+              <p className="text-uc2-muted mb-3">
+                A fully motorized XYZ scanning microscope built on UC2 cube architecture. Sub-micrometer
+                precision, multi-channel fluorescence, browser-based control, REST API, and open-source
+                software. Swap optical modules without realignment.
               </p>
               <p className="text-uc2-muted mb-3">
-                <strong>Who it&apos;s for:</strong> Schools, universities,
-                maker spaces, workshops, science outreach.
+                <strong>Who it&apos;s for:</strong> Research labs, core
+                facilities, diagnostics R&amp;D, biotech companies.
               </p>
-              <span className="inline-block bg-uc2-green/20 text-uc2-green text-sm font-semibold px-3 py-1 rounded-full mb-4">
-                From EUR 399
+              <span className="inline-block bg-uc2-blue/20 text-uc2-blue text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                Contact for quote
               </span>
               <br />
               <Link
-                href="/products/discovery"
+                href="/products/frame"
                 className="inline-block px-6 py-3 bg-uc2-blue text-white font-semibold rounded-lg hover:brightness-110 transition-all"
               >
-                Explore Discovery
+                Explore FRAME
               </Link>
             </div>
           </div>
@@ -276,31 +303,26 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
 
-        {/* FRAME */}
+        {/* Discovery */}
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <img src="/openuc2-next/images/frame.jpg" alt="FRAME microscope with motorized stage and fluorescence cubes" className="rounded-lg border border-uc2-border" />
+            <img src="/openuc2-next/images/course3.JPG" alt="Discovery Lineup: CoreBox, Electronics Kit, Infinity Upgrade, QBox" className="rounded-lg border border-uc2-border" />
             <div>
-              <Tag variant="pro">Professional</Tag>
-              <h3 className="text-2xl font-bold mt-3 mb-3">FRAME — Automated Microscope</h3>
-              <p className="text-uc2-muted mb-3">
-                A fully motorized XYZ scanning microscope built on UC2 cube architecture. Sub-micrometer
-                precision, multi-channel fluorescence, browser-based control, REST API, and open-source
-                software. Swap optical modules without realignment.
+              <Tag variant="edu">Education</Tag>
+              <h3 className="text-2xl font-bold mt-3 mb-3">Discovery Line</h3>              <p className="text-uc2-muted mb-3">
+                Modular educational kits for teaching optics, microscopy, and imaging. Start with the
+                CoreBox (analog optics), add electronics, upgrade to infinity-corrected systems, or
+                explore quantum optics with the QBox.
               </p>
               <p className="text-uc2-muted mb-3">
-                <strong>Who it&apos;s for:</strong> Research labs, core
-                facilities, diagnostics R&amp;D, biotech companies.
+                <strong>Who it&apos;s for:</strong> Schools, universities,
+                maker spaces, workshops, science outreach.
               </p>
-              <span className="inline-block bg-uc2-blue/20 text-uc2-blue text-sm font-semibold px-3 py-1 rounded-full mb-4">
-                Contact for quote
-              </span>
-              <br />
               <Link
-                href="/products/frame"
+                href="/products/discovery"
                 className="inline-block px-6 py-3 bg-uc2-blue text-white font-semibold rounded-lg hover:brightness-110 transition-all"
               >
-                Explore FRAME
+                Explore Discovery
               </Link>
             </div>
           </div>
@@ -330,6 +352,72 @@ export default function HomePage() {
                       {app.title}
                     </h4>
                     <p className="text-sm text-uc2-muted">{app.desc}</p>
+                  </div>
+                </div>
+              </Link>
+            </ScrollReveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* ===== BUILT WITH OPENUC2 (Success Stories) ===== */}
+      <Section alt id="stories">
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Built with openUC2</h2>
+            <p className="text-uc2-muted">Real projects, real results — from labs and R&amp;D teams worldwide</p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              tag: "FLIM / Photonics",
+              tagColor: "bg-uc2-blue/20 text-uc2-blue",
+              title: "FLIM integration in days, not months",
+              body: "FLIMlabs integrated their fluorescence lifetime electronics with a UC2-based microscopy platform — capturing lifetime data within days of first contact.",
+              href: "/stories/flimlabs",
+              placeholder: "FLIMlabs — photo pending",
+            },
+            {
+              tag: "Multi-Camera / Global Health",
+              tagColor: "bg-uc2-green/20 text-uc2-green",
+              title: "One platform, multiple cameras, global deployment",
+              body: "The FairScope project deployed a reproducible multi-camera microscopy system across multiple sites with consistent imaging performance.",
+              href: "/stories/fairscope",
+              placeholder: "FairScope — photo pending",
+            },
+            {
+              tag: "Photonic Compute / R&D",
+              tagColor: "bg-uc2-accent/20 text-uc2-accent",
+              title: "Rapid optical prototyping for photonic compute R&D",
+              body: "A photonic computing team used the UC2 cube grid to reconfigure free-space optical layouts in minutes instead of weeks of custom machining.",
+              href: "/stories/photonic-compute",
+              placeholder: "Photonic Computing — photo pending",
+            },
+            {
+              tag: "Lab Automation / Pathology",
+              tagColor: "bg-uc2-blue/20 text-uc2-blue",
+              title: "Fully automated tissue staining & imaging for under €30k",
+              body: "StainSTORM combines the FRAME microscope with an Opentrons OT-2 for a fully automated cyclic immunohistochemistry pipeline.",
+              href: "/stories/stainstorm",
+              placeholder: "StainSTORM — photo pending",
+            },
+          ].map((story, i) => (
+            <ScrollReveal key={story.href} delay={i * 100}>
+              <Link href={story.href} className="group block">
+                <div className="bg-uc2-card border border-uc2-border rounded-xl overflow-hidden hover:border-uc2-blue/50 transition-colors h-full flex flex-col">
+                  <div className="aspect-[3/2] bg-uc2-surface-alt flex items-center justify-center p-6">
+                    <span className="text-sm text-uc2-muted text-center">{story.placeholder}</span>
+                  </div>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <span className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full mb-2 self-start ${story.tagColor}`}>
+                      {story.tag}
+                    </span>
+                    <h4 className="font-semibold mb-2 group-hover:text-uc2-blue transition-colors">
+                      {story.title}
+                    </h4>
+                    <p className="text-sm text-uc2-muted leading-relaxed">{story.body}</p>
                   </div>
                 </div>
               </Link>

@@ -10,6 +10,13 @@ const products = [
   { label: "For Makers & Developers", items: [{ name: "Open Platform & Community", href: "/products/makers" }] },
 ];
 
+const stories = [
+  { name: "FLIMlabs — FLIM Integration", href: "/stories/flimlabs" },
+  { name: "FairScope — Multi-Camera System", href: "/stories/fairscope" },
+  { name: "Photonic Compute — Optical Prototyping", href: "/stories/photonic-compute" },
+  { name: "StainSTORM — Automated Histology", href: "/stories/stainstorm" },
+];
+
 const applications = [
   { name: "All Applications", href: "/applications", bold: true },
   { label: "Imaging Modalities", items: [
@@ -112,7 +119,7 @@ export function Header() {
                     if ("label" in item && "items" in item) {
                       return (
                         <div key={item.label}>
-                          <div className="text-[11px] uppercase tracking-wider text-uc2-gray px-3 pt-3 pb-1">
+                          <div className="text-[11px] uppercase tracking-wider text-uc2-blue/80 px-3 pt-3 pb-1">
                             {item.label}
                           </div>
                           {item.items!.map((sub) => (
@@ -129,6 +136,32 @@ export function Header() {
                     }
                     return null;
                   })}
+                </div>
+              </div>
+            )}
+          </li>
+
+          {/* Built with openUC2 dropdown */}
+          <li
+            className="relative"
+            onMouseEnter={() => setOpenDropdown("stories")}
+            onMouseLeave={() => setOpenDropdown(null)}
+          >
+            <button className="flex items-center gap-1 px-3 py-2 text-uc2-gray hover:text-uc2-blue transition-colors">
+              Built with openUC2 <ChevronDown className="w-3.5 h-3.5" />
+            </button>
+            {openDropdown === "stories" && (
+              <div className="absolute top-full left-0 pt-2">
+                <div className="w-72 bg-white border border-uc2-border rounded-lg shadow-xl p-3">
+                  {stories.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-3 py-2 text-sm text-uc2-text hover:text-uc2-blue hover:bg-uc2-light rounded-md transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
                 </div>
               </div>
             )}
@@ -197,6 +230,14 @@ export function Header() {
                 All Applications →
               </Link>
               {applications.filter(a => "items" in a).flatMap((a: any) => a.items).map((item: any) => (
+                <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block py-1.5 pl-3 text-sm text-uc2-text hover:text-uc2-blue">
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+            <div className="py-2">
+              <div className="text-[11px] uppercase tracking-wider text-uc2-gray mb-1">Built with openUC2</div>
+              {stories.map(item => (
                 <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block py-1.5 pl-3 text-sm text-uc2-text hover:text-uc2-blue">
                   {item.name}
                 </Link>

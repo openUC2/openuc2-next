@@ -6,14 +6,14 @@ import { Tag } from "@/components/ui/Section";
 
 const personas = [
   {
-    icon: <GraduationCap className="w-7 h-7" />,
-    tagVariant: "edu" as const,
-    tag: "Education",
-    title: "I want to teach optics",
+    icon: <Microscope className="w-7 h-7" />,
+    tagVariant: "pro" as const,
+    tag: "Professional & Industry",
+    title: "I need to prototype fast",
     description:
-      "Hands-on kits for classrooms, universities, and workshops. Students build real microscopes from modular cubes and understand optics by doing.",
-    cta: "Explore Discovery Line",
-    href: "/products/discovery",
+      "FRAME: a fully motorized, modular microscope platform. Configure online, validate with ray tracing, swap imaging modes in seconds. From concept to data in days.",
+    cta: "Explore FRAME",
+    href: "/products/frame",
   },
   {
     icon: <Wrench className="w-7 h-7" />,
@@ -26,14 +26,14 @@ const personas = [
     href: "/products/makers",
   },
   {
-    icon: <Microscope className="w-7 h-7" />,
-    tagVariant: "pro" as const,
-    tag: "Professional",
-    title: "I need an automated microscope",
+    icon: <GraduationCap className="w-7 h-7" />,
+    tagVariant: "edu" as const,
+    tag: "Education",
+    title: "I want to teach optics",
     description:
-      "FRAME: a fully motorized, modular microscope with XYZ scanning, multi-channel fluorescence, and open-source software. Ready for your lab.",
-    cta: "Explore FRAME",
-    href: "/products/frame",
+      "Hands-on kits for classrooms, universities, and workshops. Students build real microscopes from modular cubes and understand optics by doing.",
+    cta: "Explore Discovery Line",
+    href: "/products/discovery",
   },
 ];
 
@@ -58,13 +58,13 @@ export function HeroVideo() {
       {/* Content */}
       <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-20 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-          A microscope you can modify,
+          From optical concept to working data
           <br />
-          extend, and share.
+          — in hours, not months.
         </h1>
         <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-14">
-          An open-source modular platform that scales from teaching fundamental optics to running
-          automated fluorescence imaging — all built on the same standardized cube system.
+          A modular platform to configure, simulate, and build custom optical systems.
+          One standardized cube interface — from rapid prototyping to production.
         </p>
 
         {/* Persona cards */}

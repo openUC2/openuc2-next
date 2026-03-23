@@ -41,10 +41,10 @@ export default function ConfiguratorPage() {
       {/* Hero */}
       <Section>
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Design your microscope</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Configure. Simulate. Build.</h1>
           <p className="text-uc2-muted max-w-2xl mx-auto">
-            Our drag-and-drop configurator lets you design custom optical setups from UC2 cube modules.
-            Preview beam paths, check compatibility, and export a complete build package.
+            Design a custom optical system, validate it with ray tracing, and export a complete
+            build package — before ordering a single component.
             Open it and get starting: <a href="https://youseetoo.github.io/configurator" className="text-uc2-blue hover:underline ml-1">openUC2 Configurator</a>
           </p>
         </div>
@@ -78,6 +78,23 @@ export default function ConfiguratorPage() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* R&D callout */}
+        <ScrollReveal>
+          <div className="mt-12 bg-uc2-blue/10 border border-uc2-blue/30 rounded-xl p-8 text-center">
+            <h3 className="text-lg font-semibold mb-2">For R&amp;D teams</h3>
+            <p className="text-uc2-muted mb-4">
+              Submit your optical challenge and we&apos;ll deliver a validated configuration with
+              ray-tracing results within 48 hours.
+            </p>
+            <Link
+              href="/contact?subject=R%26D+configuration+request"
+              className="inline-block px-6 py-3 bg-uc2-blue text-white font-semibold rounded-lg hover:brightness-110 transition-all"
+            >
+              Contact us →
+            </Link>
+          </div>
+        </ScrollReveal>
       </Section>
 
       {/* Quick templates */}

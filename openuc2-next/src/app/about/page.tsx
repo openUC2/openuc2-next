@@ -8,7 +8,7 @@ import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 export const metadata: Metadata = {
   title: "About Us — openUC2",
   description:
-    "We are a Jena-based startup making microscopy accessible, modular, and open.",
+    "We are a Jena-based startup accelerating optical development with modular, open tools.",
 };
 
 const openSourceCards = [
@@ -52,8 +52,8 @@ export default function AboutPage() {
         <div className="max-w-[1140px] mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About openUC2</h1>
           <p className="text-uc2-muted max-w-xl text-lg leading-relaxed">
-            We&rsquo;re a Jena-based startup making microscopy accessible, modular,
-            and open. Our mission: give every lab, school, and maker the tools to
+            We&rsquo;re a Jena-based startup accelerating optical development with modular,
+            open tools. Our mission: give every lab, school, and maker the tools to
             see the world at the microscale&nbsp;&mdash; and the freedom to modify
             those tools.
           </p>
@@ -67,10 +67,16 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold mb-4">Our story</h2>
             <p className="text-uc2-text leading-relaxed mb-4">
               openUC2 started as an academic project at the Friedrich Schiller
-              University Jena, born from the frustration that research microscopes
-              are expensive, inflexible, and closed. The idea: what if microscopy
+              University Jena, born from the frustration that custom optical setups
+              take months to design, weeks to procure, and can&apos;t be iterated
+              without starting over. The idea: what if microscopy
               had a standardized, modular building block&nbsp;&mdash; like LEGO,
               but for optics?
+            </p>
+            <p className="text-uc2-text leading-relaxed mb-4">
+              What Raspberry Pi did for embedded computing &mdash; making
+              professional-grade capability accessible and configurable &mdash; UC2
+              does for optical systems.
             </p>
             <p className="text-uc2-text leading-relaxed mb-4">
               The UC2 cube was the answer. A 50&times;50&thinsp;mm standardized
@@ -122,7 +128,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-center mb-3">The team</h2>
           <p className="text-uc2-muted text-center mb-10 max-w-lg mx-auto">
             Physicists, engineers, educators, and makers united around one goal:
-            democratizing microscopy.
+            accelerating optical development.
           </p>
         </ScrollReveal>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">

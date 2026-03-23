@@ -256,6 +256,66 @@ export default function FramePage() {
         </div>
       </Section>
 
+      {/* How fast can you go? */}
+      <Section dark>
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-3">How fast can you go?</h2>
+            <p className="text-uc2-muted">Traditional vendor path vs. openUC2</p>
+          </div>
+        </ScrollReveal>
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Traditional */}
+          <ScrollReveal>
+            <div className="bg-uc2-card/50 border border-uc2-border rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-uc2-muted mb-6 text-center">Traditional vendor</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-uc2-muted/40 shrink-0" />
+                  <span className="text-sm text-uc2-muted">Week 1–4: RFQ &amp; quotes</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-uc2-muted/40 shrink-0" />
+                  <span className="text-sm text-uc2-muted">Month 2–4: Manufacturing</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-uc2-muted/40 shrink-0" />
+                  <span className="text-sm text-uc2-muted">Month 5: Delivery &amp; setup</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-uc2-muted/40 shrink-0" />
+                  <span className="text-sm text-uc2-muted">Month 6: First data</span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+          {/* openUC2 */}
+          <ScrollReveal delay={100}>
+            <div className="bg-uc2-blue/10 border border-uc2-blue/30 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-uc2-blue mb-6 text-center">With openUC2</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-uc2-blue shrink-0" />
+                  <span className="text-sm text-uc2-text font-medium">Day 1: Configure &amp; simulate</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-uc2-blue shrink-0" />
+                  <span className="text-sm text-uc2-text font-medium">Day 2: Assemble from modules</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-uc2-blue shrink-0" />
+                  <span className="text-sm text-uc2-text font-medium">Day 3: First data acquisition</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-uc2-blue shrink-0" />
+                  <span className="text-sm text-uc2-text font-medium">Week 2: Integrated into workflow</span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </Section>
+
       {/* ImSwitch */}
       <Section dark>
         <div className="grid md:grid-cols-2 gap-12 items-center">
