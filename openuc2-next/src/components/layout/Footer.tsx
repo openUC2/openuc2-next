@@ -21,6 +21,16 @@ const footerColumns = [
     ],
   },
   {
+    title: "Built with openUC2",
+    links: [
+      { name: "FLIMlabs — FLIM Integration", href: "/stories/flimlabs" },
+      { name: "FairScope — Multi-Camera", href: "/stories/fairscope" },
+      { name: "Photonic Compute", href: "/stories/photonic-compute" },
+      { name: "StainSTORM — Histology", href: "/stories/stainstorm" },
+      { name: "All Stories", href: "/#stories" },
+    ],
+  },
+  {
     title: "Resources",
     links: [
       { name: "Blog", href: "/blog" },
@@ -46,7 +56,7 @@ export function Footer() {
   return (
     <footer className="bg-uc2-dark dark-section border-t border-uc2-border mt-auto">
       <div className="max-w-[1140px] mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* Company info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <h4 className="text-white font-bold text-sm mb-4">openUC2 GmbH</h4>

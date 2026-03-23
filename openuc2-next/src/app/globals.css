@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   100% { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 15s linear infinite;
+  animation: marquee 8s linear infinite;
 }
 
 /* ===== SCROLL REVEAL ===== */

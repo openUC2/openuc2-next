@@ -1,0 +1,40 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: |
+          export NODE_OPTIONS=--max_old_space_size=4096
+          npm run build
+
+      - name: Push to youseetoo.github.io
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB_YOUSEETOO }}
+        with:
+          source-directory: "openuc2-next"
+          destination-github-username: "youseetoo"
+          destination-repository-name: "youseetoo.github.io"
+          target-directory: "openuc2-next"
+          user-email: "bene.d@gmx.de"
+          target-branch: "main"
+          commit-message: "Deploy openuc2-next build"

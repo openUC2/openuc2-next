@@ -21,7 +21,7 @@ const personas = [
     tag: "Makers & Research",
     title: "I want to build & prototype",
     description:
-      "An open platform for PhD students, makers, and startups. Prototype custom optical setups, contribute to the community, and integrate with your tools.",
+      "An open platform for PhD students, makers, R&D teams, and startups. Prototype custom optical setups, contribute to the community, and integrate with your tools.",
     cta: "Explore the Open Platform",
     href: "/products/makers",
   },
@@ -60,7 +60,7 @@ export function HeroVideo() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
           From optical concept to working data
           <br />
-          — in hours, not months.
+          — in hours, for everyone.
         </h1>
         <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-14">
           A modular platform to configure, simulate, and build custom optical systems.

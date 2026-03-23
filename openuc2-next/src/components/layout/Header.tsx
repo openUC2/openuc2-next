@@ -19,6 +19,7 @@ const stories = [
 
 const applications = [
   { name: "All Applications", href: "/applications", bold: true },
+  /*
   { label: "Imaging Modalities", items: [
     { name: "Fluorescence Imaging", href: "/applications/fluorescence" },
     { name: "FLIM & Advanced Fluorescence", href: "/applications/flim" },
@@ -37,6 +38,7 @@ const applications = [
   { label: "Learning & Community", items: [
     { name: "Teaching & Workshops", href: "/applications/education" },
   ]},
+  */
 ];
 
 export function Header() {
@@ -92,76 +94,65 @@ export function Header() {
             )}
           </li>
 
-          {/* Applications dropdown */}
+          {/* Solutions dropdown */}
           <li
             className="relative"
-            onMouseEnter={() => setOpenDropdown("applications")}
+            onMouseEnter={() => setOpenDropdown("solutions")}
             onMouseLeave={() => setOpenDropdown(null)}
           >
             <button className="flex items-center gap-1 px-3 py-2 text-uc2-gray hover:text-uc2-blue transition-colors">
-              Applications <ChevronDown className="w-3.5 h-3.5" />
+              Solutions <ChevronDown className="w-3.5 h-3.5" />
             </button>
-            {openDropdown === "applications" && (
+            {openDropdown === "solutions" && (
               <div className="absolute top-full left-0 pt-2">
-                <div className="w-72 bg-white border border-uc2-border rounded-lg shadow-xl p-3 max-h-[70vh] overflow-y-auto">
-                  {applications.map((item) => {
-                    if ("href" in item && "bold" in item) {
-                      return (
+                <div className="w-80 bg-white border border-uc2-border rounded-lg shadow-xl p-3 max-h-[70vh] overflow-y-auto">
+                  {/* Top-level overview links */}
+                  <Link
+                    href="/applications"
+                    className="block px-3 py-2 text-sm font-semibold text-uc2-heading hover:text-uc2-blue hover:bg-uc2-light rounded-md transition-colors"
+                  >
+                    Applications
+                  </Link>
+                  <Link
+                    href="/#stories"
+                    className="block px-3 py-2 text-sm font-semibold text-uc2-heading hover:text-uc2-blue hover:bg-uc2-light rounded-md transition-colors"
+                  >
+                    User Stories
+                  </Link>
+                  {/* Application groups */}
+                  {applications.filter((item) => "label" in item && "items" in item).map((item) => (
+                    <div key={(item as any).label}>
+                      <div className="text-[11px] uppercase tracking-wider text-uc2-blue/80 px-3 pt-3 pb-1">
+                        {(item as any).label}
+                      </div>
+                      {(item as any).items.map((sub: any) => (
                         <Link
-                          key={item.href}
-                          href={item.href!}
-                          className="block px-3 py-2 text-sm font-semibold text-uc2-heading hover:text-uc2-blue hover:bg-uc2-light rounded-md transition-colors"
+                          key={sub.href}
+                          href={sub.href}
+                          className="block px-3 py-1.5 text-sm text-uc2-text hover:text-uc2-blue hover:bg-uc2-light rounded-md transition-colors"
                         >
-                          {item.name} →
+                          {sub.name}
                         </Link>
-                      );
-                    }
-                    if ("label" in item && "items" in item) {
-                      return (
-                        <div key={item.label}>
-                          <div className="text-[11px] uppercase tracking-wider text-uc2-blue/80 px-3 pt-3 pb-1">
-                            {item.label}
-                          </div>
-                          {item.items!.map((sub) => (
-                            <Link
-                              key={sub.href}
-                              href={sub.href}
-                              className="block px-3 py-1.5 text-sm text-uc2-text hover:text-uc2-blue hover:bg-uc2-light rounded-md transition-colors"
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
-                      );
-                    }
-                    return null;
-                  })}
-                </div>
-              </div>
-            )}
-          </li>
-
-          {/* Built with openUC2 dropdown */}
-          <li
-            className="relative"
-            onMouseEnter={() => setOpenDropdown("stories")}
-            onMouseLeave={() => setOpenDropdown(null)}
-          >
-            <button className="flex items-center gap-1 px-3 py-2 text-uc2-gray hover:text-uc2-blue transition-colors">
-              Built with openUC2 <ChevronDown className="w-3.5 h-3.5" />
-            </button>
-            {openDropdown === "stories" && (
-              <div className="absolute top-full left-0 pt-2">
-                <div className="w-72 bg-white border border-uc2-border rounded-lg shadow-xl p-3">
-                  {stories.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-3 py-2 text-sm text-uc2-text hover:text-uc2-blue hover:bg-uc2-light rounded-md transition-colors"
-                    >
-                      {item.name}
-                    </Link>
+                      ))}
+                    </div>
                   ))}
+                  {/* Built with openUC2 stories */}
+                  {/*
+                  <div className="border-t border-uc2-border mt-2 pt-1">
+                    <div className="text-[11px] uppercase tracking-wider text-uc2-blue/80 px-3 pt-2 pb-1">
+                      Built with openUC2
+                    </div>
+                    {stories.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block px-3 py-1.5 text-sm text-uc2-text hover:text-uc2-blue hover:bg-uc2-light rounded-md transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                  */}
                 </div>
               </div>
             )}
@@ -225,23 +216,26 @@ export function Header() {
               ))}
             </div>
             <div className="py-2">
-              <div className="text-[11px] uppercase tracking-wider text-uc2-gray mb-1">Applications</div>
+              <div className="text-[11px] uppercase tracking-wider text-uc2-gray mb-1">Solutions</div>
               <Link href="/applications" onClick={() => setMobileOpen(false)} className="block py-1.5 pl-3 text-sm font-semibold text-uc2-heading">
-                All Applications →
+                Applications
+              </Link>
+              <Link href="/#stories" onClick={() => setMobileOpen(false)} className="block py-1.5 pl-3 text-sm font-semibold text-uc2-heading">
+                User Stories
               </Link>
               {applications.filter(a => "items" in a).flatMap((a: any) => a.items).map((item: any) => (
                 <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block py-1.5 pl-3 text-sm text-uc2-text hover:text-uc2-blue">
                   {item.name}
                 </Link>
               ))}
-            </div>
-            <div className="py-2">
-              <div className="text-[11px] uppercase tracking-wider text-uc2-gray mb-1">Built with openUC2</div>
+              {/*
+              <di v className="text-[11px] uppercase tracking-wider text-uc2-gray mt-2 mb-1 pl-3">Built with openUC2</div>
               {stories.map(item => (
                 <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block py-1.5 pl-3 text-sm text-uc2-text hover:text-uc2-blue">
                   {item.name}
                 </Link>
               ))}
+              */}
             </div>
             <Link href="/configurator" onClick={() => setMobileOpen(false)} className="block py-2 text-uc2-text hover:text-uc2-blue">
               Configurator

@@ -45,8 +45,13 @@ export default function ConfiguratorPage() {
           <p className="text-uc2-muted max-w-2xl mx-auto">
             Design a custom optical system, validate it with ray tracing, and export a complete
             build package — before ordering a single component.
-            Open it and get starting: <a href="https://youseetoo.github.io/configurator" className="text-uc2-blue hover:underline ml-1">openUC2 Configurator</a>
           </p>
+                                {/*Button to Configurator*/}
+          <div className="text-center mt-8">
+            <a href="https://youseetoo.github.io/configurator" target="_blank" rel="noopener noreferrer" className="inline-block bg-uc2-blue text-white px-6 py-3 rounded-lg hover:bg-uc2-blue-dark transition-colors">
+              Open the Configurator
+            </a>
+          </div>
         </div>
 
         
@@ -54,14 +59,31 @@ export default function ConfiguratorPage() {
         <ScrollReveal>
           <img src="/openuc2-next/images/configurator.png" alt="Screenshot of the configurator interface showing a drag-and-drop grid with cube modules and a beam path preview" className="rounded-lg border border-uc2-border" />
         </ScrollReveal>
-
-        {/*Button to Configurator*/}
-        <div className="text-center mt-8">
-          <a href="https://youseetoo.github.io/configurator" target="_blank" rel="noopener noreferrer" className="inline-block bg-uc2-blue text-white px-6 py-3 rounded-lg hover:bg-uc2-blue-dark transition-colors">
-            Open the Configurator
-          </a>
-        </div>
       </Section>
+
+      {/* ===== SPEED METRIC BAR ===== */}
+      <div className="bg-white border-b border-uc2-border py-10">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Minutes</div>
+              <div className="text-sm text-uc2-muted mt-1">to configure</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Seconds</div>
+              <div className="text-sm text-uc2-muted mt-1">to simulate</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Hours</div>
+              <div className="text-sm text-uc2-muted mt-1">to prototype</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Weeks</div>
+              <div className="text-sm text-uc2-muted mt-1">to production</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Steps */}
       <Section alt>

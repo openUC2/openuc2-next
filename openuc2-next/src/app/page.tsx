@@ -74,13 +74,14 @@ const appPreviews = [
 
 const logos = [
   { name: "Janelia / HHMI", src: "/openuc2-next/images/logos/janelia.png" },
-  { name: "Bundesministerium für Forschung, Technologie und Raumfahrt (BMFRT)", src: "/openuc2-next/images/logos/bmftr.png" },
-  { name: "European Union (EU)", src: "/openuc2-next/images/logos/eu.png" },
-  { name: "Autodesk", src: "/openuc2-next/images/logos/autodesk.png" },
+  { name: "ETH Zurich", src: "/openuc2-next/images/logos/eth.png" },
   { name: "Seeed Studio", src: "/openuc2-next/images/logos/seeed.webp" },
+  { name: "University of Helsinki", src: "/openuc2-next/images/logos/University_of_Helsinki.svg" },
+  { name: "Sorbonne", src: "/openuc2-next/images/logos/sorbonne.png" },
+  { name: "EPFL", src: "/openuc2-next/images/logos/logo-epfl.png" },
   { name: "Lichtwerkstatt", src: "/openuc2-next/images/logos/lichtwerkstatt.png" },
   { name: "Max Delbrück Center Helmholtz Institute", src: "/openuc2-next/images/logos/mdc.png" },
-  { name: "ETH Zurich", src: "/openuc2-next/images/logos/eth.png" },
+  { name: "Autodesk", src: "/openuc2-next/images/logos/autodesk.png" },
 ];
 
 export default function HomePage() {
@@ -96,34 +97,12 @@ export default function HomePage() {
       <div className="bg-uc2-light border-b border-uc2-border">
         <div className="max-w-[1140px] mx-auto px-6">
           <p className="text-center text-[11px] uppercase tracking-[0.18em] text-uc2-gray font-semibold pt-6">
-            Trusted by
+            Partners
           </p>
           <LogoStrip logos={logos} />
         </div>
       </div>
-      {/* ===== SPEED METRIC BAR ===== */}
-      <div className="bg-white border-b border-uc2-border py-10">
-        <div className="max-w-[1140px] mx-auto px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Minutes</div>
-              <div className="text-sm text-uc2-muted mt-1">to configure</div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Seconds</div>
-              <div className="text-sm text-uc2-muted mt-1">to simulate</div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Hours</div>
-              <div className="text-sm text-uc2-muted mt-1">to prototype</div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-extrabold text-uc2-heading">Weeks</div>
-              <div className="text-sm text-uc2-muted mt-1">to production</div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       {/* ===== HOW IT WORKS — THE CUBE ===== */}
       <Section alt id="how-it-works">
         <ScrollReveal>
