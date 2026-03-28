@@ -350,12 +350,12 @@ export default function FramePage() {
       <Section dark>
         <div className="max-w-2xl mx-auto text-center">
           <blockquote className="text-lg md:text-xl text-uc2-text italic leading-relaxed mb-4">
-            &ldquo;We needed a fluorescence microscope that could be customized for our specific assay
-            and integrated into our automated liquid handling workflow. FRAME let us do both without
-            being locked into proprietary software.&rdquo;
+            &ldquo;We needed a microscope that could handle both brightfield and fluorescence whole-slide imaging, 
+            be tailored to our specific assays, and fit into our automated liquid handling workflow. 
+            FRAME let us do all of that without being locked into proprietary software..&rdquo;
           </blockquote>
           <cite className="text-sm text-uc2-muted not-italic">
-            — Franzi, Helsinki University
+            — Franzi, University of Helsinki
           </cite>
         </div>
       </Section>

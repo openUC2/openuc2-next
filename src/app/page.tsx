@@ -118,7 +118,7 @@ export default function HomePage() {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <LottieScrollReveal
-            src="/openuc2-next/lottie/UC2_spiral.json"
+            src="/openuc2-next/lottie/UC2_Aufbauanimation_V02.json"
             alt="UC2 Spiral Build-Up Animation"
             className="rounded-lg border border-uc2-border overflow-hidden"
             preLoad={0.1}
@@ -348,7 +348,7 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {[
             {
               tag: "FLIM / Photonics",
@@ -357,22 +357,7 @@ export default function HomePage() {
               body: "FLIMlabs integrated their fluorescence lifetime electronics with a UC2-based microscopy platform — capturing lifetime data within days of first contact.",
               href: "/stories/flimlabs",
               placeholder: "FLIMlabs — photo pending",
-            },
-            {
-              tag: "Multi-Camera / Global Health",
-              tagColor: "bg-uc2-green/20 text-uc2-green",
-              title: "One platform, multiple cameras, global deployment",
-              body: "The FairScope project deployed a reproducible multi-camera microscopy system across multiple sites with consistent imaging performance.",
-              href: "/stories/fairscope",
-              placeholder: "FairScope — photo pending",
-            },
-            {
-              tag: "Photonic Compute / R&D",
-              tagColor: "bg-uc2-accent/20 text-uc2-accent",
-              title: "Rapid optical prototyping for photonic compute R&D",
-              body: "A photonic computing team used the UC2 cube grid to reconfigure free-space optical layouts in minutes instead of weeks of custom machining.",
-              href: "/stories/photonic-compute",
-              placeholder: "Photonic Computing — photo pending",
+              imgSrc: "/openuc2-next/images/stories/flim/flim_screenshot_3.jpeg"
             },
             {
               tag: "Lab Automation / Pathology",
@@ -381,13 +366,14 @@ export default function HomePage() {
               body: "StainSTORM combines the FRAME microscope with an Opentrons OT-2 for a fully automated cyclic immunohistochemistry pipeline.",
               href: "/stories/stainstorm",
               placeholder: "StainSTORM — photo pending",
+              imgSrc: "/openuc2-next/images/stories/stainstorm/IMG_20251119_134443.jpg"
             },
           ].map((story, i) => (
             <ScrollReveal key={story.href} delay={i * 100}>
               <Link href={story.href} className="group block">
                 <div className="bg-uc2-card border border-uc2-border rounded-xl overflow-hidden hover:border-uc2-blue/50 transition-colors h-full flex flex-col">
                   <div className="aspect-[3/2] bg-uc2-surface-alt flex items-center justify-center p-6">
-                    <span className="text-sm text-uc2-muted text-center">{story.placeholder}</span>
+                    <img src={story.imgSrc} className="w-full h-auto" />
                   </div>
                   <div className="p-5 flex-1 flex flex-col">
                     <span className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full mb-2 self-start ${story.tagColor}`}>

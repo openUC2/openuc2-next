@@ -281,6 +281,7 @@ export const applicationData: ApplicationData[] = [
       "openUC2 was born in the classroom. The modular cube system is the ideal platform for teaching optics, microscopy, and imaging at every level — from high school physics to graduate biophotonics courses. Students build real instruments, experiment with optical principles, and develop an intuition for how light works.",
     category: "Learning & Community",
     heroColor: "bg-green-950/50",
+    imagesrc: "/course3.JPG",
     specs: [
       ["Age range", "14+ (high school through graduate)"],
       ["Subjects", "Geometric optics, wave optics, microscopy, fluorescence, image processing"],

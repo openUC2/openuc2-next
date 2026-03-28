@@ -22,12 +22,14 @@ export function LottieScrollReveal({ src, alt, className = "", preLoad=0.1 }: Pr
     const el = containerRef.current;
     if (!el) return;
 
+    // enforce a transaparent background for better blending with the page
     const anim = lottie.loadAnimation({
       container: el,
       renderer: "svg",
       loop: false,
       autoplay: false,
       path: src,
+      
     });
 
     animRef.current = anim;

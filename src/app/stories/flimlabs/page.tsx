@@ -26,11 +26,8 @@ export default function FlimlabsStoryPage() {
 
       {/* Hero */}
       <Section>
-        <PlaceholderImage
-          text="FLIMlabs hero — photo pending"
-          aspectRatio="12/5"
-          className="mb-10"
-        />
+          <img src="/openuc2-next/images/stories/flim/image-6-2048x1536.jpg" alt="" className="rounded-lg border border-uc2-border" />
+
         <ScrollReveal>
           <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-uc2-blue/20 text-uc2-blue mb-4">
             FLIM / Photonics
@@ -79,7 +76,7 @@ export default function FlimlabsStoryPage() {
       <Section>
         <div className="max-w-2xl mx-auto text-center">
           <blockquote className="text-lg md:text-xl text-uc2-text italic leading-relaxed mb-4">
-            &ldquo;Testimonial placeholder — to be filled by marketing.&rdquo;
+            &ldquo;openUC2 provides the missing link between our FLIM-Kit and the imaging. Our core mission: Democratization of FLIM.&rdquo;
           </blockquote>
           <cite className="text-sm text-uc2-muted not-italic">— FLIMlabs Team</cite>
         </div>
@@ -91,10 +88,10 @@ export default function FlimlabsStoryPage() {
           <h2 className="text-2xl font-bold mb-6">Gallery</h2>
         </ScrollReveal>
         <div className="grid sm:grid-cols-2 gap-6">
-          <PlaceholderImage text="FLIM false-color lifetime map — photo pending" aspectRatio="4/3" />
-          <PlaceholderImage text="UC2 setup with FLIMlabs electronics — photo pending" aspectRatio="4/3" />
-          <PlaceholderImage text="Configurator screenshot — photo pending" aspectRatio="4/3" />
-          <PlaceholderImage text="Data result — photo pending" aspectRatio="4/3" />
+          <img src="/openuc2-next/images/stories/flim/IMG_20251112_113351.jpg" height="300" alt="" className="rounded-lg border border-uc2-border" />
+          <img src="/openuc2-next/images/stories/flim/flim_screenshot_4.jpeg" height="300" alt="" className="rounded-lg border border-uc2-border" />
+          <img src="/openuc2-next/images/stories/flim/IMG_20251022_121629.jpg" height="300" alt="" className="rounded-lg border border-uc2-border" />
+          <img src="/openuc2-next/images/stories/flim/image-2048x1536.jpg " height="300" alt="" className="rounded-lg border border-uc2-border" />
         </div>
       </Section>
 

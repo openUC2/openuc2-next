@@ -26,11 +26,7 @@ export default function StainstormStoryPage() {
 
       {/* Hero */}
       <Section>
-        <PlaceholderImage
-          text="StainSTORM hero — photo pending"
-          aspectRatio="12/5"
-          className="mb-10"
-        />
+        <img src="/openuc2-next/images/stories/stainstorm/Mein-Film-1.gif" alt="" className="rounded-lg border border-uc2-border" />
         <ScrollReveal>
           <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-uc2-blue/20 text-uc2-blue mb-4">
             Lab Automation / Pathology
@@ -93,10 +89,10 @@ export default function StainstormStoryPage() {
           <h2 className="text-2xl font-bold mb-6">Gallery</h2>
         </ScrollReveal>
         <div className="grid sm:grid-cols-2 gap-6">
-          <PlaceholderImage text="FRAME inside Opentrons OT-2 — photo pending" aspectRatio="4/3" />
-          <PlaceholderImage text="Before/after tissue stain result — photo pending" aspectRatio="4/3" />
-          <PlaceholderImage text="Pipeline workflow diagram — photo pending" aspectRatio="4/3" />
-          <PlaceholderImage text="Automated scan results — photo pending" aspectRatio="4/3" />
+          <img src="/openuc2-next/images/stories/stainstorm/image.png" height="300" alt="" className="rounded-lg border border-uc2-border" />
+          <img src="/openuc2-next/images/stories/stainstorm/image-2.png" height="300" alt="" className="rounded-lg border border-uc2-border" />
+          <img src="/openuc2-next/images/stories/stainstorm/image-4-1.jpg" height="300" alt="" className="rounded-lg border border-uc2-border" />
+          <img src="/openuc2-next/images/stories/stainstorm/IMG_20251119_134443.jpg" height="300" alt="" className="rounded-lg border border-uc2-border" />
         </div>
       </Section>
 

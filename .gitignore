@@ -4,3 +4,8 @@
 /openuc2-next/openuc2-next/_next
 /openuc2-next/openuc2-next
 /node_modules
+/.next
+/openuc2-next/_next
+/openuc2-next/build
+/openuc2-next/server
+/openuc2-next/static/chunks
