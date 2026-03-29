@@ -9,7 +9,13 @@ export interface BlogPost {
   excerpt: string;
   author: string;
   coverColor: string;
+  coverImage?: string;
   content: string;
+}
+
+function extractFirstImage(content: string): string | undefined {
+  const match = content.match(/!\[.*?\]\(([^)]+)\)/);
+  return match?.[1];
 }
 
 const postsDir = path.join(process.cwd(), "src/content/blog");
@@ -27,6 +33,7 @@ export function getAllPosts(): BlogPost[] {
       excerpt: (data.excerpt as string) ?? "",
       author: (data.author as string) ?? "openUC2 Team",
       coverColor: (data.coverColor as string) ?? "#0f4c81",
+      coverImage: (data.coverImage as string | undefined) ?? extractFirstImage(content),
       content,
     };
   });

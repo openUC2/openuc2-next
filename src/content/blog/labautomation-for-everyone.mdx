@@ -10,6 +10,8 @@ StainSTORM started from a simple idea: if we want spatial biology workflows to b
 
 At the center of the workflow is a cyclic chromogenic immunohistochemistry protocol designed for FFPE tissue slides. The goal is to run repeated staining rounds on the same sample, image each round, and use the acquired data for both documentation and quality control inside the loop. That requires precise and repeatable liquid handling, reliable sample logistics between instruments, robust imaging, and an analysis pipeline that can keep up with the data volume and provide actionable readouts.
 
+![StainSTORM lab automation system](/images/blog/labautomation/image.png)
+
 ## University of Helsinki: The Biological Anchor
 
 The University of Helsinki team provided the biological and experimental anchor of the project. They drove the wet-lab requirements, shaped the staining protocol around real research constraints, and ensured that what we automate is not just a "demo pipeline" but something aligned with practical tissue workflows. The workflow using the Opentrons OT2 was already part of their daily routine, but it lacked high-throughput. Their perspective defined the success criteria: the staining needs to be consistent across cycles, the images need to be interpretable for downstream analysis, and the system has to be robust enough to run for extended periods without constant supervision.
@@ -18,6 +20,8 @@ The University of Helsinki team provided the biological and experimental anchor 
 
 The automation layer is built around the idea that each device should expose a hardware agnostic service that is reliable and contains high-level actions that can be composed into a larger workflow. The [Opentrons](http://opentrons.com/) OT2 plays a key role here by executing the repeated staining and washing steps in a controlled, repeatable manner. The [Fairino FR5](http://fairino.fr/) robotic arm layer adds what is often missing in lab automation: physical integration for moving slides from A to B. With the Fairino arm integration, the system can transport slide racks between stations and place them reproducibly for imaging, enabling continuous operation and tighter coupling between wet lab steps and imaging-based checks. To make this whole step simple, we designed a custom sample holder ready to hold multiple slides for sequential staining in the Opentrons and then moving it back and forth to the microscope.
 
+![Robotic arm and sample handling](/images/blog/labautomation/image-2.png)
+
 ## The FRAME Microscope as Imaging Node
 
 OpenUC2's core contribution is (obviously) the microscope. We provided the OpenUC2 FRAME microscope as an affordable, modular imaging node that can be tightly integrated into an automation stack. Beyond the hardware, the microscope is designed to operate headless and to expose scanning functions that fit into a service-based architecture. That matters because the microscope is not treated as a special one-off instrument, but as a programmable component in a distributed workflow. The OpenUC2 microscope captures tile scans that can be stitched into large mosaics and compared across staining cycles, making it possible to support quality control and downstream segmentation without relying on proprietary scanning infrastructure. We integrated the necessary services through Arkitekt in a simple controller: [ArkitektController.py](https://github.com/openUC2/ImSwitch/blob/master/imswitch/imcontrol/controller/controllers/ArkitektController.py). This one adapts the function to scan a slide to the service world of Arkitekt.
@@ -25,6 +29,8 @@ OpenUC2's core contribution is (obviously) the microscope. We provided the OpenU
 ## Compute and Analysis
 
 The compute and analysis side is where the workflow becomes more than just automation. The Max Delbrück Center and the Helmholtz HPC environment provide the computational home for large-scale image processing: stitching, registration across cycles, segmentation, and exploratory biomarker-driven analysis. This is essential because cyclic workflows quickly generate many gigabytes of image data, and turning that into per-cell and per-region measurements requires scalable resources. Equally important is the idea of traceability: analysis is part of the experiment, not an afterthought, and it needs to be reproducible alongside the wet-lab steps.
+
+![Tissue slide imaging results](/images/blog/labautomation/image-3.png)
 
 ## Arkitekt: The Orchestrator
 

@@ -10,6 +10,8 @@ coverColor: "#27ae60"
 
 At OpenUC2 we love testing the limits of modular microscopy. Our newest plant-science rig, inspired by the developments with the Wageningen University in the Netherlands, does exactly that: the entire frame can be rotated 90° onto its back. Seedlings stay in their natural, upright orientation, while objective and camera glide horizontally — perfect for long-term growth studies that would otherwise suffer from gravity-induced artifacts.
 
+![FRAME rotated 90° for plant imaging](/images/blog/agricultural/VID_20250505_125116.gif)
+
 ## ROPOD Chambers Meet UC2 Stages
 
 To house delicate seedlings we adopted the open-source ROPOD system ([Nature Scientific Reports](https://www.nature.com/articles/s41598-024-63226-1)). Each transparent chamber provides a humid, sterile micro-environment with optical-grade windows. Two chambers snap straight into our magnetic UC2 stage, so you can compare genotypes or treatments side-by-side. A motorized z-drive sweeps through focal planes; our controller triggers time-lapse sequences from minutes to weeks, stitching full 3D stacks into a single file.
@@ -20,9 +22,13 @@ To house delicate seedlings we adopted the open-source ROPOD system ([Nature Sci
 - **Light-sheet:** Swap the tube lens for our cylindrical module and illuminate roots with a 2-µm-thin sheet for fast, gentle 3D imaging. (e.g. with the [HoliSHEET](https://github.com/beniroquai/HoLiSheet))
 - **Bright-field & DIC:** Classic modalities are one click away — no additional optics required.
 
+![Time-lapse imaging session](/images/blog/agricultural/Bildschirmaufnahme-2025-08-08-um-10.33.57.gif)
+
 ## AI-Assisted Pest Detection
 
 Together with Wageningen's Nematode Lab (José Lozano's lab, [WUR](https://www.wur.nl/en/persons/jose-lozano-torres-1.htm)) we aimed to apply smart microscopy where the microscope automatically tracks the roots and a network flags nematodes as they penetrate the root. Stem cross-sections are streamed to a Raspberry Pi 5 mounted under the stage; inference runs in real-time, marking each parasite with a heat-map overlay. In the future researchers receive instant alerts plus CSV exports for quantitative analysis.
+
+![Real-time AI pest detection overlay](/images/blog/agricultural/Bildschirmaufnahme-2025-08-08-um-10.43.19.gif)
 
 ## Hardware Simplicity, Open-Source Flexibility
 

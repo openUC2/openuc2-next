@@ -372,8 +372,8 @@ export default function HomePage() {
             <ScrollReveal key={story.href} delay={i * 100}>
               <Link href={story.href} className="group block">
                 <div className="bg-uc2-card border border-uc2-border rounded-xl overflow-hidden hover:border-uc2-blue/50 transition-colors h-full flex flex-col">
-                  <div className="aspect-[3/2] bg-uc2-surface-alt flex items-center justify-center p-6">
-                    <img src={story.imgSrc} className="w-full h-auto" />
+                  <div className="aspect-[3/2] overflow-hidden">
+                    <img src={story.imgSrc} className="w-full h-full object-cover" alt={story.title} />
                   </div>
                   <div className="p-5 flex-1 flex flex-col">
                     <span className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full mb-2 self-start ${story.tagColor}`}>

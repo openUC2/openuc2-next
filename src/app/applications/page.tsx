@@ -51,9 +51,8 @@ export default function ApplicationsPage() {
                   <ScrollReveal key={app.slug} delay={i * 80}>
                     <Link href={`/applications/${app.slug}`} className="group block">
                       <div className="bg-uc2-card border border-uc2-border rounded-xl overflow-hidden hover:border-uc2-blue/50 transition-colors h-full">
-                        <div className={`aspect-[16/10] ${app.heroColor} flex items-center justify-center`}>
-                          <img src={`/openuc2-next/images/applications/${app.imagesrc}`} className="w-full h-auto" />
-                          <span className="text-xs text-uc2-muted/50">{app.category}</span>
+                        <div className={`aspect-[16/10] ${app.heroColor} overflow-hidden relative`}>
+                          <img src={`/openuc2-next/images/applications/${app.imagesrc}`} className="w-full h-full object-cover" alt={app.title} />
                         </div>
                         <div className="p-5">
                           <h3 className="font-semibold mb-1 group-hover:text-uc2-blue transition-colors">

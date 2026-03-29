@@ -26,7 +26,9 @@ export default function StainstormStoryPage() {
 
       {/* Hero */}
       <Section>
-        <img src="/openuc2-next/images/stories/stainstorm/Mein-Film-1.gif" alt="" className="rounded-lg border border-uc2-border" />
+        <div className="aspect-[16/7] overflow-hidden rounded-lg border border-uc2-border mb-8">
+          <img src="/openuc2-next/images/stories/stainstorm/Mein-Film-1.gif" alt="StainSTORM automated workflow" className="w-full h-full object-cover" />
+        </div>
         <ScrollReveal>
           <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-uc2-blue/20 text-uc2-blue mb-4">
             Lab Automation / Pathology
@@ -88,11 +90,19 @@ export default function StainstormStoryPage() {
         <ScrollReveal>
           <h2 className="text-2xl font-bold mb-6">Gallery</h2>
         </ScrollReveal>
-        <div className="grid sm:grid-cols-2 gap-6">
-          <img src="/openuc2-next/images/stories/stainstorm/image.png" height="300" alt="" className="rounded-lg border border-uc2-border" />
-          <img src="/openuc2-next/images/stories/stainstorm/image-2.png" height="300" alt="" className="rounded-lg border border-uc2-border" />
-          <img src="/openuc2-next/images/stories/stainstorm/image-4-1.jpg" height="300" alt="" className="rounded-lg border border-uc2-border" />
-          <img src="/openuc2-next/images/stories/stainstorm/IMG_20251119_134443.jpg" height="300" alt="" className="rounded-lg border border-uc2-border" />
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
+            <img src="/openuc2-next/images/stories/stainstorm/image.png" alt="StainSTORM workflow overview" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
+            <img src="/openuc2-next/images/stories/stainstorm/image-2.png" alt="Automated staining result" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
+            <img src="/openuc2-next/images/stories/stainstorm/image-4-1.jpg" alt="Tissue imaging" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
+            <img src="/openuc2-next/images/stories/stainstorm/IMG_20251119_134443.jpg" alt="StainSTORM system setup" className="w-full h-full object-cover" />
+          </div>
         </div>
       </Section>
 

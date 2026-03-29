@@ -26,9 +26,13 @@ Looking at industrial systems made the solution obvious: CAN bus, the same techn
 
 After more than a year of iterations and many internal discussions about how far modularity should go, we now have a robust system based on CAN bus. Every participant on the bus has its own CAN ID and is individually addressable.
 
+![CAN bus node architecture](/images/blog/can-bus/image-1.png)
+
 In practice, this means the system can be extended almost arbitrarily: multiple motors, multiple lasers, LED matrices, galvos, joysticks, M5Stack-style interfaces, all on the same bus.
 
 The ecosystem of different Seeed Studio Xiao ESP32S3 boards communicate through the "Master" using the TWAI/CAN-Bus. Each node is autonomous, knows its role, and communicates through clearly defined messages.
+
+![CAN bus distributed system overview](/images/blog/can-bus/image-2.png)
 
 ## One API, Two Transports
 
@@ -57,6 +61,8 @@ Some of our boards are hybrid by design. They can run as standalone controllers 
 Depending on the CAN ID and address range, a motor can be controlled locally or remotely over the bus. The same firmware supports both modes. This lets us start simple and scale later without changing the underlying architecture.
 
 More information available here: [https://docs.openuc2.com/dev/hw/electronics/uc2-standalone-board/schematics-v4](https://docs.openuc2.com/dev/hw/electronics/uc2-standalone-board/schematics-v4)
+
+![Electronics node schematic](/images/blog/can-bus/image-3.png)
 
 ## A Foundation for the Entire Platform
 

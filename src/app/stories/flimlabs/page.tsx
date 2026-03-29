@@ -26,7 +26,9 @@ export default function FlimlabsStoryPage() {
 
       {/* Hero */}
       <Section>
-          <img src="/openuc2-next/images/stories/flim/image-6-2048x1536.jpg" alt="" className="rounded-lg border border-uc2-border" />
+        <div className="aspect-[16/7] overflow-hidden rounded-lg border border-uc2-border mb-8">
+          <img src="/openuc2-next/images/stories/flim/image-6-2048x1536.jpg" alt="FLIMlabs microscopy setup" className="w-full h-full object-cover" />
+        </div>
 
         <ScrollReveal>
           <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-uc2-blue/20 text-uc2-blue mb-4">
@@ -87,11 +89,19 @@ export default function FlimlabsStoryPage() {
         <ScrollReveal>
           <h2 className="text-2xl font-bold mb-6">Gallery</h2>
         </ScrollReveal>
-        <div className="grid sm:grid-cols-2 gap-6">
-          <img src="/openuc2-next/images/stories/flim/IMG_20251112_113351.jpg" height="300" alt="" className="rounded-lg border border-uc2-border" />
-          <img src="/openuc2-next/images/stories/flim/flim_screenshot_4.jpeg" height="300" alt="" className="rounded-lg border border-uc2-border" />
-          <img src="/openuc2-next/images/stories/flim/IMG_20251022_121629.jpg" height="300" alt="" className="rounded-lg border border-uc2-border" />
-          <img src="/openuc2-next/images/stories/flim/image-2048x1536.jpg " height="300" alt="" className="rounded-lg border border-uc2-border" />
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
+            <img src="/openuc2-next/images/stories/flim/IMG_20251112_113351.jpg" alt="FLIMlabs microscopy setup" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
+            <img src="/openuc2-next/images/stories/flim/flim_screenshot_4.jpeg" alt="FLIM data screenshot" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
+            <img src="/openuc2-next/images/stories/flim/IMG_20251022_121629.jpg" alt="FLIM microscope hardware" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
+            <img src="/openuc2-next/images/stories/flim/image-2048x1536.jpg" alt="FLIM imaging result" className="w-full h-full object-cover" />
+          </div>
         </div>
       </Section>
 
