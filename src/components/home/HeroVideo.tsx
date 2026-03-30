@@ -1,4 +1,5 @@
 "use client";
+import { basePath } from "@/lib/basePath";
 
 import Link from "next/link";
 import { GraduationCap, Wrench, Microscope } from "lucide-react";
@@ -47,9 +48,9 @@ export function HeroVideo() {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        poster="/openuc2-next/images/hero-poster.jpg"
+        poster={`${basePath}/images/hero-poster.jpg`}
       >
-        <source src="/openuc2-next/videos/openuc2_hero2.mp4" type="video/mp4" />
+        <source src={`${basePath}/videos/openuc2_hero2.mp4`} type="video/mp4" />
       </video>
 
       {/* Overlay */}

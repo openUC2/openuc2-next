@@ -1,3 +1,4 @@
+import { basePath } from "@/lib/basePath";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Box, Cpu, Code, LayoutGrid, FileText, Users, Wrench } from "lucide-react";
@@ -50,19 +51,19 @@ const communityBuilds = [
     title: "Incubator microscope",
     desc: "A PhD student in Berlin built a time-lapse microscope that sits inside a CO2 incubator. Uses ESP32 WiFi for remote control.",
     user: "Community build",
-    imageSrc: "/openuc2-next/images/incuscope.jpg",
+    imageSrc: `${basePath}/images/incuscope.jpg`,
   },
   {
     title: "Automated blood smear scanner",
     desc: "A clinic in Nigeria assembled a brightfield scanner from 3D-printed cubes and a Raspberry Pi. Scans malaria samples at 10x.",
     user: "Community build",
-    imageSrc: "/openuc2-next/images/shitscope.png",
+    imageSrc: `${basePath}/images/shitscope.png`,
   },
   {
     title: "DIY light-sheet microscope",
     desc: "A group of undergrads in Munich built a light-sheet microscope for their thesis project, including a custom sample chamber. Total cost under EUR 500.",
     user: "Community build",
-    imageSrc: "/openuc2-next/images/lightsheet.jpeg",
+    imageSrc: `${basePath}/images/lightsheet.jpeg`,
   },
 ];
 
@@ -104,7 +105,7 @@ export default function MakersPage() {
               </a>
             </div>
           </div>
-          <img src="/openuc2-next/images/course2.JPG" alt="Collage of open-source microscope components: 3D-printed cubes, circuit boards, and software screenshots" className="rounded-lg border border-uc2-border" />
+          <img src={`${basePath}/images/course2.JPG`} alt="Collage of open-source microscope components: 3D-printed cubes, circuit boards, and software screenshots" className="rounded-lg border border-uc2-border" />
         </div>
       </Section>
 

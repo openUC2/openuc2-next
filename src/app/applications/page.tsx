@@ -1,3 +1,4 @@
+import { basePath } from "@/lib/basePath";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
@@ -6,7 +7,7 @@ import { applicationData } from "@/lib/applications";
 
 export const metadata: Metadata = {
   title: "Applications",
-  icons: "/openuc2-next/images/applications/immunostaining.jpg",
+  icons: `${basePath}/images/applications/immunostaining.jpg`,
   description:
     "Explore what you can image with openUC2 — from fluorescence imaging to histology, live-cell imaging, and beyond.",
 };
@@ -52,7 +53,7 @@ export default function ApplicationsPage() {
                     <Link href={`/applications/${app.slug}`} className="group block">
                       <div className="bg-uc2-card border border-uc2-border rounded-xl overflow-hidden hover:border-uc2-blue/50 transition-colors h-full">
                         <div className={`aspect-[16/10] ${app.heroColor} overflow-hidden relative`}>
-                          <img src={`/openuc2-next/images/applications/${app.imagesrc}`} className="w-full h-full object-cover" alt={app.title} />
+                          <img src={`${basePath}/images/applications/${app.imagesrc}`} className="w-full h-full object-cover" alt={app.title} />
                         </div>
                         <div className="p-5">
                           <h3 className="font-semibold mb-1 group-hover:text-uc2-blue transition-colors">

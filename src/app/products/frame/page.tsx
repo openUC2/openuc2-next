@@ -1,3 +1,4 @@
+import { basePath } from "@/lib/basePath";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RefreshCw, Target, Camera, Globe, Bot, BookOpen } from "lucide-react";
@@ -84,10 +85,10 @@ const features = [
 ];
 
 const sampleImages = [
-  { title: "Fluorescence — AF488 FluoCells", desc: "Multi-tile automated scan with stitching", meta: "FRAME | 20x | 488 nm LED", bg: "bg-emerald-950", imgSrc: "/openuc2-next/images/frame_fluo.jpg" },
-  { title: "Histology — H&E Tissue Section", desc: "Automated slide scanning, 130x90 mm coverage", meta: "FRAME | 10x | Brightfield", bg: "bg-amber-950", imgSrc: "/openuc2-next/images/frame_histo.png" },
-  { title: "Phase Contrast — Live Cells", desc: "DPC and quantitative phase imaging", meta: "FRAME | 40x | Phase Contrast", bg: "bg-slate-800", imgSrc: "/openuc2-next/images/frame_phasecontrast.png" },
-  { title: "Super-Resolution — dSTORM", desc: "Single-molecule localization microscopy", meta: "FRAME | 60x | 638 nm Laser", bg: "bg-purple-950", imgSrc: "/openuc2-next/images/frame_storm.png" },
+  { title: "Fluorescence — AF488 FluoCells", desc: "Multi-tile automated scan with stitching", meta: "FRAME | 20x | 488 nm LED", bg: "bg-emerald-950", imgSrc: `${basePath}/images/frame_fluo.jpg` },
+  { title: "Histology — H&E Tissue Section", desc: "Automated slide scanning, 130x90 mm coverage", meta: "FRAME | 10x | Brightfield", bg: "bg-amber-950", imgSrc: `${basePath}/images/frame_histo.png` },
+  { title: "Phase Contrast — Live Cells", desc: "DPC and quantitative phase imaging", meta: "FRAME | 40x | Phase Contrast", bg: "bg-slate-800", imgSrc: `${basePath}/images/frame_phasecontrast.png` },
+  { title: "Super-Resolution — dSTORM", desc: "Single-molecule localization microscopy", meta: "FRAME | 60x | 638 nm Laser", bg: "bg-purple-950", imgSrc: `${basePath}/images/frame_storm.png` },
 ];
 
 export default function FramePage() {
@@ -128,7 +129,7 @@ export default function FramePage() {
               </Link>
             </div>
           </div>
-          <img src="/openuc2-next/images/frame1.png" alt="FRAME microscope, front-quarter view showing the stage, optical column, and modular cube bays" className="rounded-lg border border-uc2-border" />
+          <img src={`${basePath}/images/frame1.png`} alt="FRAME microscope, front-quarter view showing the stage, optical column, and modular cube bays" className="rounded-lg border border-uc2-border" />
         </div>
       </Section>
 
@@ -207,7 +208,7 @@ export default function FramePage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={150}>
-            <img src="/openuc2-next/images/frame_stage.gif" alt="Exploded view of FRAME showing the optical column with modular cubes and the motorized stage" className="rounded-lg border border-uc2-border" />
+            <img src={`${basePath}/images/frame_stage.gif`} alt="Exploded view of FRAME showing the optical column with modular cubes and the motorized stage" className="rounded-lg border border-uc2-border" />
           </ScrollReveal>
         </div>
       </Section>
@@ -341,7 +342,7 @@ export default function FramePage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={150}>
-            <img src="/openuc2-next/images/frame_imswitch.png" alt="Screenshot of ImSwitch GUI showing live view and acquisition controls" className="rounded-lg border border-uc2-border" />
+            <img src={`${basePath}/images/frame_imswitch.png`} alt="Screenshot of ImSwitch GUI showing live view and acquisition controls" className="rounded-lg border border-uc2-border" />
           </ScrollReveal>
         </div>
       </Section>

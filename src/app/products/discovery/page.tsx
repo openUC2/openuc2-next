@@ -1,3 +1,4 @@
+import { basePath } from "@/lib/basePath";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Zap, Infinity, Lightbulb, Disc3, Ruler, Sparkles, BookText, School, GraduationCap } from "lucide-react";
@@ -27,7 +28,7 @@ const addons = [
     title: "Electronics Add-On",
     slug: "electronics",
     shopLink: "https://shop.openuc2.com/shop/kit-electronics-elt-25-02-discovery-electronics-add-on-1593",
-    imgSrc: "/openuc2-next/images/addons/electronics.webp",
+    imgSrc: `${basePath}/images/addons/electronics.webp`,
     price: "EUR 549",
     description:
       "Adds ESP32 microcontroller, stepper motors, LED matrix, and USB camera. Transform your analog microscope into a computer-controlled imaging system. Requires: CoreBox.",
@@ -38,7 +39,7 @@ const addons = [
     slug: "infinity",
     shopLink: "https://shop.openuc2.com/shop/discovery-infinity-add-on-153",
     price: "EUR 749",
-    imgSrc: "/openuc2-next/images/addons/infinity.webp",
+    imgSrc: `${basePath}/images/addons/infinity.webp`,
     description:
       "Upgrade to infinity-corrected optics with a tube lens and RMS objective. Camera-based digital imaging with proper Koehler illumination. Requires: CoreBox + Electronics.",
   },
@@ -47,7 +48,7 @@ const addons = [
     title: "Fluorescence LED Add-On",
     slug: "fluorescence-led",
     price: "EUR 699",
-    imgSrc: "/openuc2-next/images/addons/fluorescence-led.webp",
+    imgSrc: `${basePath}/images/addons/fluorescence-led.webp`,
     description:
       "Adds a 488 nm LED excitation source, dichroic mirror cube, and emission filter. Real fluorescence microscopy on a student budget. Requires: CoreBox + Electronics + Infinity.",
   },
@@ -57,7 +58,7 @@ const addons = [
     slug: "fluorescence-laser",
     shopLink: "https://shop.openuc2.com/shop/discovery-fluorescence-add-on-led-488nm-159",
     price: "EUR 1,199",
-    imgSrc: "/openuc2-next/images/addons/fluorescence-laser.webp",
+    imgSrc: `${basePath}/images/addons/fluorescence-laser.webp`,
     description:
       "488 nm laser excitation for higher-intensity fluorescence imaging. Includes safety enclosure and alignment tools. Requires: CoreBox + Electronics + Infinity.",
   },
@@ -66,7 +67,7 @@ const addons = [
     title: "Light-Sheet Add-On",
     slug: "light-sheet",
     price: "EUR 999",
-    imgSrc: "/openuc2-next/images/addons/light-sheet.webp",
+    imgSrc: `${basePath}/images/addons/light-sheet.webp`,
     shopLink: "https://shop.openuc2.com/shop/discovery-light-sheet-add-on-154",
     description:
       "Build an actual selective plane illumination microscope (SPIM) from cubes. Cylindrical lens, sample chamber, and orthogonal detection path. Requires: CoreBox + Electronics + Infinity.",
@@ -116,7 +117,7 @@ export default function DiscoveryPage() {
               </a>
             </div>
           </div>
-          <img src="/openuc2-next/images/corebox.webp" alt="Discovery Lineup: CoreBox, Electronics Kit, Infinity Upgrade, QBox" className="rounded-lg border border-uc2-border" />
+          <img src={`${basePath}/images/corebox.webp`} alt="Discovery Lineup: CoreBox, Electronics Kit, Infinity Upgrade, QBox" className="rounded-lg border border-uc2-border" />
         </div>
       </Section>
 
@@ -159,7 +160,7 @@ export default function DiscoveryPage() {
         {/* CoreBox */}
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-            <img src="/openuc2-next/images/discovery.png" alt="CoreBox Kit" className="rounded-lg border border-uc2-border" />
+            <img src={`${basePath}/images/discovery.png`} alt="CoreBox Kit" className="rounded-lg border border-uc2-border" />
             <div>
               <h3 className="text-2xl font-bold mb-1">
                 CoreBox{" "}
@@ -190,7 +191,7 @@ export default function DiscoveryPage() {
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="md:order-2">
-              <img src="/openuc2-next/images/qbox.png" alt="QBox Quantum Optics Kit" className="rounded-lg border border-uc2-border" />
+              <img src={`${basePath}/images/qbox.png`} alt="QBox Quantum Optics Kit" className="rounded-lg border border-uc2-border" />
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-1">

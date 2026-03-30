@@ -1,3 +1,4 @@
+import { basePath } from "@/lib/basePath";
 import Link from "next/link";
 import { GraduationCap, Wrench, Microscope, FlaskConical, ScanLine, Clock4, BookOpen } from "lucide-react";
 import { Section, CTABanner, Tag } from "@/components/ui/Section";
@@ -73,15 +74,15 @@ const appPreviews = [
 ];
 
 const logos = [
-  { name: "Janelia / HHMI", src: "/openuc2-next/images/logos/janelia.png" },
-  { name: "ETH Zurich", src: "/openuc2-next/images/logos/eth.png" },
-  { name: "Seeed Studio", src: "/openuc2-next/images/logos/seeed.webp" },
-  { name: "University of Helsinki", src: "/openuc2-next/images/logos/University_of_Helsinki.svg" },
-  { name: "Sorbonne", src: "/openuc2-next/images/logos/sorbonne.png" },
-  { name: "EPFL", src: "/openuc2-next/images/logos/logo-epfl.png" },
-  { name: "Lichtwerkstatt", src: "/openuc2-next/images/logos/lichtwerkstatt.png" },
-  { name: "Max Delbrück Center Helmholtz Institute", src: "/openuc2-next/images/logos/mdc.png" },
-  { name: "Autodesk", src: "/openuc2-next/images/logos/autodesk.png" },
+  { name: "Janelia / HHMI", src: `${basePath}/images/logos/janelia.png` },
+  { name: "ETH Zurich", src: `${basePath}/images/logos/eth.png` },
+  { name: "Seeed Studio", src: `${basePath}/images/logos/seeed.webp` },
+  { name: "University of Helsinki", src: `${basePath}/images/logos/University_of_Helsinki.svg` },
+  { name: "Sorbonne", src: `${basePath}/images/logos/sorbonne.png` },
+  { name: "EPFL", src: `${basePath}/images/logos/logo-epfl.png` },
+  { name: "Lichtwerkstatt", src: `${basePath}/images/logos/lichtwerkstatt.png` },
+  { name: "Max Delbrück Center Helmholtz Institute", src: `${basePath}/images/logos/mdc.png` },
+  { name: "Autodesk", src: `${basePath}/images/logos/autodesk.png` },
 ];
 
 export default function HomePage() {
@@ -118,7 +119,7 @@ export default function HomePage() {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <LottieScrollReveal
-            src="/openuc2-next/lottie/UC2_Aufbauanimation_V02.json"
+            src={`${basePath}/lottie/UC2_Aufbauanimation_V02.json`}
             alt="UC2 Spiral Build-Up Animation"
             className="rounded-lg border border-uc2-border overflow-hidden"
             preLoad={0.1}
@@ -201,7 +202,7 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={150}>
-            <img src="/openuc2-next/images/configurator.png" alt="UC2 Ecosystem Diagram" className="rounded-lg border border-uc2-border" />
+            <img src={`${basePath}/images/configurator.png`} alt="UC2 Ecosystem Diagram" className="rounded-lg border border-uc2-border" />
           </ScrollReveal>
         </div>
       </Section>
@@ -220,7 +221,7 @@ export default function HomePage() {
         {/* FRAME */}
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-            <img src="/openuc2-next/images/frame.jpg" alt="FRAME microscope with motorized stage and fluorescence cubes" className="rounded-lg border border-uc2-border" />
+            <img src={`${basePath}/images/frame.jpg`} alt="FRAME microscope with motorized stage and fluorescence cubes" className="rounded-lg border border-uc2-border" />
             <div>
               <Tag variant="pro">Professional &amp; Industry</Tag>
               <h3 className="text-2xl font-bold mt-3 mb-3">FRAME — Automated Microscope</h3>
@@ -251,7 +252,7 @@ export default function HomePage() {
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
             <div className="md:order-2">
-              <img src="/openuc2-next/images/openplpatform.jpg" alt="Makers and researchers prototyping with the open platform" className="rounded-lg border border-uc2-border" />
+              <img src={`${basePath}/images/openplpatform.jpg`} alt="Makers and researchers prototyping with the open platform" className="rounded-lg border border-uc2-border" />
             </div>
             <div>
               <Tag variant="maker">Makers & Research</Tag>
@@ -285,7 +286,7 @@ export default function HomePage() {
         {/* Discovery */}
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <img src="/openuc2-next/images/course3.JPG" alt="Discovery Lineup: CoreBox, Electronics Kit, Infinity Upgrade, QBox" className="rounded-lg border border-uc2-border" />
+            <img src={`${basePath}/images/course3.JPG`} alt="Discovery Lineup: CoreBox, Electronics Kit, Infinity Upgrade, QBox" className="rounded-lg border border-uc2-border" />
             <div>
               <Tag variant="edu">Education</Tag>
               <h3 className="text-2xl font-bold mt-3 mb-3">Discovery Line</h3>              <p className="text-uc2-muted mb-3">
@@ -357,7 +358,7 @@ export default function HomePage() {
               body: "FLIMlabs integrated their fluorescence lifetime electronics with a UC2-based microscopy platform — capturing lifetime data within days of first contact.",
               href: "/stories/flimlabs",
               placeholder: "FLIMlabs — photo pending",
-              imgSrc: "/openuc2-next/images/stories/flim/flim_screenshot_3.jpeg"
+              imgSrc: `${basePath}/images/stories/flim/flim_screenshot_3.jpeg`
             },
             {
               tag: "Lab Automation / Pathology",
@@ -366,7 +367,7 @@ export default function HomePage() {
               body: "StainSTORM combines the FRAME microscope with an Opentrons OT-2 for a fully automated cyclic immunohistochemistry pipeline.",
               href: "/stories/stainstorm",
               placeholder: "StainSTORM — photo pending",
-              imgSrc: "/openuc2-next/images/stories/stainstorm/IMG_20251119_134443.jpg"
+              imgSrc: `${basePath}/images/stories/stainstorm/IMG_20251119_134443.jpg`
             },
           ].map((story, i) => (
             <ScrollReveal key={story.href} delay={i * 100}>
@@ -403,7 +404,7 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="flex flex-col items-center gap-1">
               <div className="w-70 h-40 rounded-lg bg-uc2-surface-alt border border-uc2-border flex items-center justify-center">
-                <img src="/openuc2-next/images/logos/tab.png" alt="Thüringer Aufbaubank Logo" className="h-16" />
+                <img src={`${basePath}/images/logos/tab.png`} alt="Thüringer Aufbaubank Logo" className="h-16" />
               </div>
               <span className="text-xs text-uc2-muted text-center max-w-[200px]">Thüringer Aufbaubank (TAB)</span>
             </div>
@@ -411,7 +412,7 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="flex flex-col items-center gap-1">
               <div className="w-70 h-40 rounded-lg bg-uc2-surface-alt border border-uc2-border flex items-center justify-center">
-                <img src="/openuc2-next/images/logos/eu.png" alt="European Union Logo" className="h-16" />
+                <img src={`${basePath}/images/logos/eu.png`} alt="European Union Logo" className="h-16" />
               </div>
               <span className="text-xs text-uc2-muted text-center max-w-[200px]">European Union and the local EFRE Structural Fund in Thuringia</span>
             </div>
@@ -419,7 +420,7 @@ export default function HomePage() {
           <ScrollReveal delay={100}>
             <div className="flex flex-col items-center gap-1">
               <div className="w-70 h-40 rounded-lg bg-uc2-surface-alt border border-uc2-border flex items-center justify-center">
-                <img src="/openuc2-next/images/logos/bmftr.png" alt="BMFRT Logo" className="h-25" />
+                <img src={`${basePath}/images/logos/bmftr.png`} alt="BMFRT Logo" className="h-25" />
               </div>
               <span className="text-xs text-uc2-muted text-center max-w-[200px]">Bundesministerium für Forschung, Technologie und Raumfahrt</span>
             </div>

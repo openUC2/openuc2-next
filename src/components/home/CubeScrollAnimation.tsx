@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Group, Mesh } from "three";
+import { basePath } from "@/lib/basePath";
 
 // Feature flag: set to false to disable the cube scroll animation
 const CUBE_ANIMATION_ENABLED = false;
@@ -65,7 +66,6 @@ export function CubeScrollAnimation() {
       scene.add(ambientLight);
 
       // Load the OBJ model
-      const basePath = "/openuc2-next";
       const loader = new OBJLoader();
       let modelGroup: Group;
 

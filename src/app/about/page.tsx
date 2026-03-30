@@ -1,3 +1,4 @@
+import { basePath } from "@/lib/basePath";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Unlock, FileText, Globe, BookOpen } from "lucide-react";
@@ -30,18 +31,18 @@ const openSourceCards = [
 ];
 
 const teamMembers = [
-  { name: "Dr. Benedict Diederich", role: "CEO & Co-Founder | Vision | R&D", imageSrc: "/openuc2-next/images/Benedict.jpg", bio: "Physicist and inventor of the UC2 system. Benedict leads the company vision and drives R&D. Published in Nature Communications and Nature Methods." },
-  { name: "Haoran Wang", role: "CTO | R&D | Production | Logistics", imageSrc: "/openuc2-next/images/Haoran.jpg", bio: "Hardware and optics expert responsible for production, quality assurance, and logistics. Key architect of the FRAME microscope." },
-  { name: "Sebastian Trampenau", role: "CFO | Financing | Sales | Marketing", imageSrc: "/openuc2-next/images/Sebastian.jpg", bio: "Business strategist managing finances, sales operations, and marketing. Drives partnerships and commercial growth." },
-  { name: "Christian Kuttke", role: "Electronics design", imageSrc: "/openuc2-next/images/Christian.jpg", bio: "Electronics engineer designing the UC2 control boards, motor drivers, and LED controllers. Expert in ESP32-based systems." },
-  { name: "Armin Grundmann", role: "Product Management", imageSrc: "/openuc2-next/images/Armin.jpg", bio: "Manages product development lifecycle from concept to delivery. Coordinates between engineering and customer needs." },
-  { name: "Jens Gerstenberger", role: "Mechanical design | Automation Engineer", imageSrc: "/openuc2-next/images/Jens.jpg", bio: "Mechanical engineer specializing in precision mechanics and automation. Designs cube modules and stage assemblies." },
-  { name: "Christine Aumüller", role: "Production | Product certification", imageSrc: "/openuc2-next/images/Christine.jpg", bio: "Oversees production workflows and ensures product certification and compliance for educational and research markets." },
-  { name: "Dr. Ethan Li", role: "Software Engineer", imageSrc: "/openuc2-next/images/Ethan.jpg", bio: "Software developer contributing to ImSwitch and the UC2 web ecosystem. Focuses on microscopy control and automation." },
-  { name: "Florian Paproth", role: "Software Engineer", imageSrc: "/openuc2-next/images/Florian.jpg", bio: "Software engineer working on firmware, web interfaces, and system integration for the UC2 platform." },
+  { name: "Dr. Benedict Diederich", role: "CEO & Co-Founder | Vision | R&D", imageSrc: `${basePath}/images/Benedict.jpg`, bio: "Physicist and inventor of the UC2 system. Benedict leads the company vision and drives R&D. Published in Nature Communications and Nature Methods." },
+  { name: "Haoran Wang", role: "CTO | R&D | Production | Logistics", imageSrc: `${basePath}/images/Haoran.jpg`, bio: "Hardware and optics expert responsible for production, quality assurance, and logistics. Key architect of the FRAME microscope." },
+  { name: "Sebastian Trampenau", role: "CFO | Financing | Sales | Marketing", imageSrc: `${basePath}/images/Sebastian.jpg`, bio: "Business strategist managing finances, sales operations, and marketing. Drives partnerships and commercial growth." },
+  { name: "Christian Kuttke", role: "Electronics design", imageSrc: `${basePath}/images/Christian.jpg`, bio: "Electronics engineer designing the UC2 control boards, motor drivers, and LED controllers. Expert in ESP32-based systems." },
+  { name: "Armin Grundmann", role: "Product Management", imageSrc: `${basePath}/images/Armin.jpg`, bio: "Manages product development lifecycle from concept to delivery. Coordinates between engineering and customer needs." },
+  { name: "Jens Gerstenberger", role: "Mechanical design | Automation Engineer", imageSrc: `${basePath}/images/Jens.jpg`, bio: "Mechanical engineer specializing in precision mechanics and automation. Designs cube modules and stage assemblies." },
+  { name: "Christine Aumüller", role: "Production | Product certification", imageSrc: `${basePath}/images/Christine.jpg`, bio: "Oversees production workflows and ensures product certification and compliance for educational and research markets." },
+  { name: "Dr. Ethan Li", role: "Software Engineer", imageSrc: `${basePath}/images/Ethan.jpg`, bio: "Software developer contributing to ImSwitch and the UC2 web ecosystem. Focuses on microscopy control and automation." },
+  { name: "Florian Paproth", role: "Software Engineer", imageSrc: `${basePath}/images/Florian.jpg`, bio: "Software engineer working on firmware, web interfaces, and system integration for the UC2 platform." },
   { name: "Dr. Johannes Roos", role: "Software Engineer | Application Specialist", imageSrc: "https://avatars.githubusercontent.com/u/3322897?v=4", bio: "Software engineer and application specialist bridging microscopy workflows with software development." },
-  { name: "Stephan Becker", role: "Automation Engineer | Robotics", imageSrc: "/openuc2-next/images/Stephan.jpg", bio: "Automation and robotics expert integrating UC2 with lab automation systems and robotic sample handling." },
-  { name: "Dirk Truckenbrodt", role: "Sales", imageSrc: "/openuc2-next/images/Dirk.jpg", bio: "Sales specialist connecting openUC2 products with educational institutions, labs, and research organizations." },
+  { name: "Stephan Becker", role: "Automation Engineer | Robotics", imageSrc: `${basePath}/images/Stephan.jpg`, bio: "Automation and robotics expert integrating UC2 with lab automation systems and robotic sample handling." },
+  { name: "Dirk Truckenbrodt", role: "Sales", imageSrc: `${basePath}/images/Dirk.jpg`, bio: "Sales specialist connecting openUC2 products with educational institutions, labs, and research organizations." },
 ];
 
 export default function AboutPage() {
@@ -94,7 +95,7 @@ export default function AboutPage() {
           </ScrollReveal>
           <ScrollReveal delay={120}>
             <img
-              src="/openuc2-next/images/Team.jpg"
+              src={`${basePath}/images/Team.jpg`}
               alt="Collage of early UC2 prototypes, the original Nature Communications paper, and photos of the founders working in the lab"
               className="rounded-lg border border-uc2-border"
             />

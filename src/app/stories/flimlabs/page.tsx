@@ -1,3 +1,4 @@
+import { basePath } from "@/lib/basePath";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Section, CTABanner } from "@/components/ui/Section";
@@ -27,7 +28,7 @@ export default function FlimlabsStoryPage() {
       {/* Hero */}
       <Section>
         <div className="aspect-[16/7] overflow-hidden rounded-lg border border-uc2-border mb-8">
-          <img src="/openuc2-next/images/stories/flim/image-6-2048x1536.jpg" alt="FLIMlabs microscopy setup" className="w-full h-full object-cover" />
+          <img src={`${basePath}/images/stories/flim/image-6-2048x1536.jpg`} alt="FLIMlabs microscopy setup" className="w-full h-full object-cover" />
         </div>
 
         <ScrollReveal>
@@ -91,16 +92,16 @@ export default function FlimlabsStoryPage() {
         </ScrollReveal>
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
-            <img src="/openuc2-next/images/stories/flim/IMG_20251112_113351.jpg" alt="FLIMlabs microscopy setup" className="w-full h-full object-cover" />
+            <img src={`${basePath}/images/stories/flim/IMG_20251112_113351.jpg`} alt="FLIMlabs microscopy setup" className="w-full h-full object-cover" />
           </div>
           <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
-            <img src="/openuc2-next/images/stories/flim/flim_screenshot_4.jpeg" alt="FLIM data screenshot" className="w-full h-full object-cover" />
+            <img src={`${basePath}/images/stories/flim/flim_screenshot_4.jpeg`} alt="FLIM data screenshot" className="w-full h-full object-cover" />
           </div>
           <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
-            <img src="/openuc2-next/images/stories/flim/IMG_20251022_121629.jpg" alt="FLIM microscope hardware" className="w-full h-full object-cover" />
+            <img src={`${basePath}/images/stories/flim/IMG_20251022_121629.jpg`} alt="FLIM microscope hardware" className="w-full h-full object-cover" />
           </div>
           <div className="aspect-[4/3] overflow-hidden rounded-lg border border-uc2-border">
-            <img src="/openuc2-next/images/stories/flim/image-2048x1536.jpg" alt="FLIM imaging result" className="w-full h-full object-cover" />
+            <img src={`${basePath}/images/stories/flim/image-2048x1536.jpg`} alt="FLIM imaging result" className="w-full h-full object-cover" />
           </div>
         </div>
       </Section>

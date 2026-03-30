@@ -1,3 +1,4 @@
+import { basePath } from "@/lib/basePath";
 import Link from "next/link";
 import { Lightbulb } from "lucide-react";
 import { Section, CTABanner, SpecsTable, FeatureCard } from "@/components/ui/Section";
@@ -44,7 +45,7 @@ export function ApplicationTemplate({ app }: Props) {
           </div>
           {/* If available, show the application-specific image; otherwise, show a placeholder */}
           {app.imagesrc ? (
-            <img src={`/openuc2-next/images/applications/${app.imagesrc}`} alt={`${app.title} application example`} className="rounded-lg border border-uc2-border" />
+            <img src={`${basePath}/images/applications/${app.imagesrc}`} alt={`${app.title} application example`} className="rounded-lg border border-uc2-border" />
           ) : (
             <PlaceholderImage
               text={`${app.title} — sample image`}

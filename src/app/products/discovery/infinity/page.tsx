@@ -1,3 +1,4 @@
+import { basePath } from "@/lib/basePath";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Infinity } from "lucide-react";
@@ -60,7 +61,7 @@ export default function InfinityAddonPage() {
           </div>
           <ScrollReveal delay={100}>
             <div className="aspect-[4/3] rounded-lg bg-uc2-surface-alt border border-uc2-border flex items-center justify-center">
-              <img src="/openuc2-next/images/addons/infinity.webp" alt="Infinity Add-On product image" className="w-full h-full object-cover rounded-lg" />
+              <img src={`${basePath}/images/addons/infinity.webp`} alt="Infinity Add-On product image" className="w-full h-full object-cover rounded-lg" />
             </div>
           </ScrollReveal>
         </div>
